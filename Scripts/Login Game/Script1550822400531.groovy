@@ -17,3 +17,5 @@ WS.sendRequestAndVerify(findTestObject('Get_Session_Token'))
 
 WS.sendRequestAndVerify(findTestObject('Login'))
 
+WS.sendRequestAndVerify(findTestObject('take-turn'))
+
