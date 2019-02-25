@@ -66,6 +66,13 @@
       <masked>false</masked>
       <name>userid</name>
    </variables>
+   <variables>
+      <defaultValue>GlobalVariable.sessiontoken</defaultValue>
+      <description></description>
+      <id>52fcf816-ab29-4750-9b6f-28004d9ac628</id>
+      <masked>false</masked>
+      <name>sessiontoken</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -73,14 +80,13 @@ import com.kms.katalon.core.testobject.ResponseObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webservice.verification.WSResponseManager
 
-import groovy.json.JsonSlurper
-import internal.GlobalVariable as GlobalVariable
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-
+import groovy.json.JsonSlurper
+import internal.GlobalVariable as GlobalVariable
 
 
 WS.verifyResponseStatusCode(response, 200)
@@ -88,13 +94,13 @@ WS.verifyResponseStatusCode(response, 200)
 assertThat(response.getStatusCode()).isEqualTo(200)
 assertThat(response.getResponseText()).contains('session_token')
 
-def slurper = new groovy.json.JsonSlurper()
-def result = slurper.parseText(response.getResponseBodyContent())
+def getsession = new groovy.json.JsonSlurper()
+def result_getsession = getsession.parseText(response.getResponseBodyContent())
 
-def value = result.session_token
-println (&quot;...value extracted is :&quot;+value)
+def session_token = result_getsession.session_token
+println (&quot;...value extracted is :&quot;+session_token)
 
-GlobalVariable.sessiontoken = value
+GlobalVariable.sessiontoken = session_token
 println (&quot;GlobalVariable is :&quot;+GlobalVariable.sessiontoken)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

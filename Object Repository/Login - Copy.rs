@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>Login</name>
+   <name>Login - Copy</name>
    <tag></tag>
-   <elementGuidId>f224b7c5-3e07-4849-aa6a-736cf5e8bd51</elementGuidId>
+   <elementGuidId>6e3ab8dd-4252-4a5c-b130-b70a81b770f7</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;${session_token}\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;c304afdf-2f61-6369-c088-924f99e1be1a\&quot;,\n    \&quot;player_token\&quot;: \&quot;f7ff1bde15fe15d856b36a06da79cdc6\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;text/plain&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -50,16 +50,16 @@
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>GlobalVariable.sessiontoken</defaultValue>
+      <defaultValue>GlobalVariable.rgssessiontoken</defaultValue>
       <description></description>
-      <id>f58afccd-2677-4453-80f2-9162dae713f1</id>
+      <id>9d4a37c8-8fda-43c2-8fb1-04e26ea22597</id>
       <masked>false</masked>
-      <name>session_token</name>
+      <name>rgssessiontoken</name>
    </variables>
    <variables>
-      <defaultValue>'c304afdf-2f61-6369-c088-924f99e1be1a'</defaultValue>
+      <defaultValue>''</defaultValue>
       <description></description>
-      <id>469e4f86-9bbc-404c-b32b-4922e3199538</id>
+      <id>431c1dba-7131-4c32-a0ba-797c6130e016</id>
       <masked>false</masked>
       <name>partner</name>
    </variables>
@@ -75,32 +75,16 @@ import internal.GlobalVariable as GlobalVariable
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
-
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-WS.verifyResponseStatusCode(response, 200)
+def slurper = new groovy.json.JsonSlurper()
+def result = slurper.parseText(response.getResponseBodyContent())
 
-assertThat(response.getStatusCode()).isEqualTo(200)
-
-def login = new groovy.json.JsonSlurper()
-def result_login = login.parseText(response.getResponseBodyContent())
-
-def rgssessiontoken = result_login.state.session_token
+def rgssessiontoken = result.state.session_token
 println (&quot;...value extracted is :&quot;+rgssessiontoken)
 
 GlobalVariable.rgssessiontoken = rgssessiontoken
 println (&quot;GlobalVariable is :&quot;+GlobalVariable.rgssessiontoken)
-
-def statetag = result_login.state.state_tag
-println (&quot;...value extracted is :&quot;+statetag)
-
-GlobalVariable.statetag = statetag
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.statetag)
-
-def playerid = result_login.state.player_id
-println (&quot;...value extracted is :&quot;+playerid)
-
-GlobalVariable.playerid = playerid
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.playerid)</verificationScript>
+</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
