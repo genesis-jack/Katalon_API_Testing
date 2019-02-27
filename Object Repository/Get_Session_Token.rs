@@ -67,11 +67,11 @@
       <name>userid</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.sessiontoken</defaultValue>
+      <defaultValue>GlobalVariable.session_token</defaultValue>
       <description></description>
       <id>52fcf816-ab29-4750-9b6f-28004d9ac628</id>
       <masked>false</masked>
-      <name>sessiontoken</name>
+      <name>session_token</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
@@ -100,7 +100,7 @@ def result_getsession = getsession.parseText(response.getResponseBodyContent())
 def session_token = result_getsession.session_token
 println (&quot;...value extracted is :&quot;+session_token)
 
-GlobalVariable.sessiontoken = session_token
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.sessiontoken)</verificationScript>
+GlobalVariable.session_token = session_token
+println (&quot;GlobalVariable is :&quot;+GlobalVariable.session_token)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

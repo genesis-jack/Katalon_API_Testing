@@ -50,7 +50,7 @@
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>GlobalVariable.sessiontoken</defaultValue>
+      <defaultValue>GlobalVariable.session_token</defaultValue>
       <description></description>
       <id>f58afccd-2677-4453-80f2-9162dae713f1</id>
       <masked>false</masked>
@@ -88,19 +88,19 @@ def result_login = login.parseText(response.getResponseBodyContent())
 def rgssessiontoken = result_login.state.session_token
 println (&quot;...value extracted is :&quot;+rgssessiontoken)
 
-GlobalVariable.rgssessiontoken = rgssessiontoken
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.rgssessiontoken)
+GlobalVariable.rgs_session_token = rgssessiontoken
+println (&quot;GlobalVariable is :&quot;+GlobalVariable.rgs_session_token)
 
 def statetag = result_login.state.state_tag
 println (&quot;...value extracted is :&quot;+statetag)
 
-GlobalVariable.statetag = statetag
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.statetag)
+GlobalVariable.state_tag = statetag
+println (&quot;GlobalVariable is :&quot;+GlobalVariable.state_tag)
 
 def playerid = result_login.state.player_id
 println (&quot;...value extracted is :&quot;+playerid)
 
-GlobalVariable.playerid = playerid
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.playerid)</verificationScript>
+GlobalVariable.player_id = playerid
+println (&quot;GlobalVariable is :&quot;+GlobalVariable.player_id)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

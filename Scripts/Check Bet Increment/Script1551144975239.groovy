@@ -13,8 +13,21 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-response = WS.sendRequestAndVerify(findTestObject('Get_Session_Token'))
+response0 = WS.sendRequestAndVerify(findTestObject('Get_Session_Token'))
 
+response1 = WS.sendRequestAndVerify(findTestObject('Login'))
 
-WS.sendRequestAndVerify(findTestObject('Login'))
+def login = new groovy.json.JsonSlurper()
 
+def login_rsult = login.parseText(response1.getResponseBodyContent())
+
+def denomination = login_rsult.game.bet_denominations
+println('bet denomination is :' + denomination)
+
+String arrayResponse = denomination
+println('arrayResponse is :' + arrayResponse)
+
+String arrayExpect = bet_denomination
+println('arrayDenomination is :' + arrayExpect)
+
+assert arrayResponse == arrayExpect

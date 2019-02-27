@@ -13,9 +13,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-response = WS.sendRequest(findTestObject('Get_Session_Token'))
+response = WS.sendRequestAndVerify(findTestObject('Get_Session_Token'))
 
 WS.sendRequestAndVerify(findTestObject('Login'))
 
-WS.sendRequest(findTestObject('take-turn'))
+WS.sendRequestAndVerify(findTestObject('take-turn'))
 
