@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Spin</name>
+   <name>Check If Free Spin</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>05108258-2146-4f14-8ac6-82a4d5703e24</testCaseGuid>

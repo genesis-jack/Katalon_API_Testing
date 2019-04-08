@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>Login</name>
+   <name>Login - Original</name>
    <tag></tag>
-   <elementGuidId>f224b7c5-3e07-4849-aa6a-736cf5e8bd51</elementGuidId>
+   <elementGuidId>a22fc202-0950-4cf8-9d9a-3ad89598feb0</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;${session_token}\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;2db1e31e20564008484d2d1ab0d74227\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;text/plain&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -73,14 +73,14 @@
    <variables>
       <defaultValue>GlobalVariable.free_spin_complete</defaultValue>
       <description></description>
-      <id>6e74c5b0-dc61-4aaf-8d8b-01eee52bb5fd</id>
+      <id>f6f4c6e3-2a36-48f4-82f8-c6a66a37b54f</id>
       <masked>false</masked>
       <name>free_spin_complete</name>
    </variables>
    <variables>
       <defaultValue>GlobalVariable.free_spin_left</defaultValue>
       <description></description>
-      <id>c5dfe187-1d38-44ea-bd9d-036bc127019a</id>
+      <id>f38b7642-745a-4107-b043-0023604ea67a</id>
       <masked>false</masked>
       <name>free_spin_left</name>
    </variables>
@@ -139,7 +139,7 @@ println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_pick)
 def free_spin_complete = result_login.state.features[1].complete
 println (&quot;...value extracted is :&quot;+free_spin_complete)
 GlobalVariable.free_spin_complete = free_spin_complete
-println (&quot;Free Spin complete is :&quot;+GlobalVariable.free_spin_complete)
+println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_complete)
 
 def free_spin_left = result_login.state.features[1].feature_state.free_spins_left
 println (&quot;...value extracted is :&quot;+free_spin_left)
