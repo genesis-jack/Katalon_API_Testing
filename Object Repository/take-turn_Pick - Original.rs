@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>take-turn_Pick</name>
+   <name>take-turn_Pick - Original</name>
    <tag></tag>
-   <elementGuidId>70281927-c79b-4530-8c58-af74c2b20023</elementGuidId>
+   <elementGuidId>7433b70b-a24e-4092-9d41-90c1bd920a90</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n   \&quot;player_id\&quot;: \&quot;${player_id}\&quot;,\n   \&quot;partner_code\&quot;: \&quot;${partner_code}\&quot;,\n   \&quot;choice_id\&quot;: \&quot;FS_20\&quot;,\n   \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n   \&quot;action\&quot;: \&quot;PICK\&quot;,\n   \&quot;session_token\&quot;: \&quot;${rgs_session_token}\&quot;,\n   \&quot;state_tag\&quot;:\&quot;${state_tag}\&quot;,\n   \&quot;bet_denom_index\&quot;: 1\n}&quot;,
+  &quot;text&quot;: &quot;{\n   \&quot;player_id\&quot;: \&quot;1571102\&quot;,\n   \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n   \&quot;choice_id\&quot;: \&quot;FS_20\&quot;,\n   \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n   \&quot;action\&quot;: \&quot;PICK\&quot;,\n   \&quot;session_token\&quot;: \&quot;ef4614bc-a782-4a70-aee8-7e0f5323e763\&quot;,\n   \&quot;state_tag\&quot;:\&quot;2E547523\&quot;,\n   \&quot;bet_denom_index\&quot;: 1\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -83,36 +83,30 @@ def result_spin = spin.parseText(response.getResponseBodyContent())
 def rgssessiontoken = result_spin.session_token
 println (&quot;...value extracted is :&quot;+rgssessiontoken)
 GlobalVariable.rgs_session_token = rgssessiontoken
-println (&quot;RGS Session is :&quot;+GlobalVariable.rgs_session_token)
+println (&quot;session is :&quot;+GlobalVariable.rgs_session_token)
 
 def statetag = result_spin.state_tag
 println (&quot;...value extracted is :&quot;+statetag)
 GlobalVariable.state_tag = statetag
-println (&quot;State Tag is :&quot;+GlobalVariable.state_tag)
+println (&quot;state tag is :&quot;+GlobalVariable.state_tag)
 
 def playerid = result_spin.player_id
 println (&quot;...value extracted is :&quot;+playerid)
 GlobalVariable.player_id = playerid
-println (&quot;Player ID is :&quot;+GlobalVariable.player_id)
+println (&quot;player id is :&quot;+GlobalVariable.player_id)
 
 def features = result_spin.features
 println (&quot;...value extracted is :&quot;+features)
 GlobalVariable.features = features
-println (&quot;Features is :&quot;+GlobalVariable.features)
+println (&quot;features is :&quot;+GlobalVariable.features)
 
-if (features != null) {		// Free Spin Triggered
+if (features != null) {
 	def free_spin_pick = result_spin.features[0].complete
-	GlobalVariable.free_spin_pick = free_spin_pick
-	println (&quot;free spin pick is :&quot;+GlobalVariable.free_spin_pick)
-	
-	if (free_spin_pick == true) {		// Free Spin Picked
-		def free_spin_complete = result_spin.features[1].complete
-		GlobalVariable.free_spin_complete = free_spin_complete
-		println (&quot;free spin complete is :&quot;+GlobalVariable.free_spin_complete)
-		def free_spin_left = result_spin.features[1].feature_state.free_spins_left
-		GlobalVariable.free_spin_left = free_spin_left
-		println (&quot;free spins left is :&quot;+GlobalVariable.free_spin_left)
-	}
+	println (&quot;free spin pick is :&quot;+free_spin_pick)
+	def free_spin_complete = result_spin.features[1].complete
+	println (&quot;free spin complete is :&quot;+free_spin_complete)
+	def free_spin_left = result_spin.features[1].feature_state.free_spins_left
+	println (&quot;free spins left is :&quot;+free_spin_left)
 }</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

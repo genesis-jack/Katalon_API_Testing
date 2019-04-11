@@ -32,7 +32,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://${url}/m4/wallet/balance/${userid}?</restUrl>
+   <restUrl>https://${url}/m4/wallet/balance/${player_id}?</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -60,11 +60,11 @@
       <name>secretkey</name>
    </variables>
    <variables>
-      <defaultValue>'1571102'</defaultValue>
+      <defaultValue>'86577271'</defaultValue>
       <description></description>
       <id>ffde4b70-b21c-4392-83bc-9064107d82de</id>
       <masked>false</masked>
-      <name>userid</name>
+      <name>player_id</name>
    </variables>
    <variables>
       <defaultValue>GlobalVariable.session_token</defaultValue>

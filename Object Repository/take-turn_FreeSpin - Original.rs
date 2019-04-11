@@ -8,8 +8,8 @@
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;player_id\&quot;: \&quot;1571102\&quot;,\n    \&quot;session_token\&quot;: \&quot;1e2e9abd-ca85-4251-b84f-beb1adf48a81\&quot;,\n    \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;action\&quot;: \&quot;FREE_SPIN\&quot;,\n    \&quot;state_tag\&quot;: \&quot;9CC632B8\&quot;\n}&quot;,
-  &quot;contentType&quot;: &quot;text/plain&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;player_id\&quot;: \&quot;1571102\&quot;,\n    \&quot;session_token\&quot;: \&quot;1aaa3424-8318-4912-bbac-9b91bae82e1e\&quot;,\n    \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;action\&quot;: \&quot;FREE_SPIN\&quot;,\n    \&quot;state_tag\&quot;: \&quot;F6F245D5\&quot;\n}&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
    <httpBodyType>text</httpBodyType>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>Content-Type</name>
       <type>Main</type>
-      <value>text/plain</value>
+      <value>application/json</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
@@ -56,13 +56,6 @@
       <masked>false</masked>
       <name>state_tag</name>
    </variables>
-   <variables>
-      <defaultValue>GlobalVariable.features</defaultValue>
-      <description></description>
-      <id>b2676f78-3fdb-4dd7-8930-27d7389d76f7</id>
-      <masked>false</masked>
-      <name>features</name>
-   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -83,6 +76,37 @@ ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 WS.verifyResponseStatusCode(response, 200)
 
 assertThat(response.getStatusCode()).isEqualTo(200)
-</verificationScript>
+
+def spin = new groovy.json.JsonSlurper()
+def result_spin = spin.parseText(response.getResponseBodyContent())
+
+def rgssessiontoken = result_spin.session_token
+println (&quot;...value extracted is :&quot;+rgssessiontoken)
+GlobalVariable.rgs_session_token = rgssessiontoken
+println (&quot;RGS Session Token is :&quot;+GlobalVariable.rgs_session_token)
+
+def statetag = result_spin.state_tag
+println (&quot;...value extracted is :&quot;+statetag)
+GlobalVariable.state_tag = statetag
+println (&quot;State Tag is :&quot;+GlobalVariable.state_tag)
+
+def playerid = result_spin.player_id
+println (&quot;...value extracted is :&quot;+playerid)
+GlobalVariable.player_id = playerid
+println (&quot;Player ID is :&quot;+GlobalVariable.player_id)
+
+def features = result_spin.features
+println (&quot;...value extracted is :&quot;+features)
+GlobalVariable.features = features
+println (&quot;Features is :&quot;+GlobalVariable.features)
+
+if (features != null) {
+	def free_spin_pick = result_spin.features[0].complete
+	println (&quot;free spin pick is :&quot;+free_spin_pick)
+	def free_spin_complete = result_spin.features[1].complete
+	println (&quot;free spin complete is :&quot;+free_spin_complete)
+	def free_spin_left = result_spin.features[1].feature_state.free_spins_left
+	println (&quot;free spins left is :&quot;+free_spin_left)
+}</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

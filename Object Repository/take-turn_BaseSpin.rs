@@ -9,7 +9,7 @@
    <httpBody></httpBody>
    <httpBodyContent>{
   &quot;text&quot;: &quot;{\n   \&quot;player_id\&quot;: \&quot;${player_id}\&quot;,\n   \&quot;partner_code\&quot;: \&quot;${partner_code}\&quot;,\n   \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n   \&quot;action\&quot;: \&quot;SPIN\&quot;,\n   \&quot;session_token\&quot;: \&quot;${rgs_session_token}\&quot;,\n   \&quot;state_tag\&quot;:\&quot;${state_tag}\&quot;,\n   \&quot;bet_denom_index\&quot;: 1\n}&quot;,
-  &quot;contentType&quot;: &quot;text/plain&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
    <httpBodyType>text</httpBodyType>
@@ -56,13 +56,6 @@
       <masked>false</masked>
       <name>state_tag</name>
    </variables>
-   <variables>
-      <defaultValue>GlobalVariable.features</defaultValue>
-      <description></description>
-      <id>b2676f78-3fdb-4dd7-8930-27d7389d76f7</id>
-      <masked>false</masked>
-      <name>features</name>
-   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -72,6 +65,7 @@ import com.kms.katalon.core.webservice.verification.WSResponseManager
 
 import groovy.json.JsonSlurper
 import internal.GlobalVariable as GlobalVariable
+import net.bytebuddy.implementation.bytecode.constant.NullConstant
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
@@ -90,21 +84,36 @@ def result_spin = spin.parseText(response.getResponseBodyContent())
 def rgssessiontoken = result_spin.session_token
 println (&quot;...value extracted is :&quot;+rgssessiontoken)
 GlobalVariable.rgs_session_token = rgssessiontoken
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.rgs_session_token)
+println (&quot;rgs session is :&quot;+GlobalVariable.rgs_session_token)
 
 def statetag = result_spin.state_tag
 println (&quot;...value extracted is :&quot;+statetag)
 GlobalVariable.state_tag = statetag
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.state_tag)
+println (&quot;state tag is :&quot;+GlobalVariable.state_tag)
 
 def playerid = result_spin.player_id
 println (&quot;...value extracted is :&quot;+playerid)
 GlobalVariable.player_id = playerid
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.player_id)
+println (&quot;player id is :&quot;+GlobalVariable.player_id)
 
 def features = result_spin.features
 println (&quot;...value extracted is :&quot;+features)
 GlobalVariable.features = features
-println (&quot;GlobalVariable is :&quot;+GlobalVariable.features)</verificationScript>
+println (&quot;features is :&quot;+GlobalVariable.features)
+
+if (features != null) {		// Free Spin Triggered
+	def free_spin_pick = result_spin.features[0].complete
+	GlobalVariable.free_spin_pick = free_spin_pick
+	println (&quot;free spin pick is :&quot;+GlobalVariable.free_spin_pick)
+	
+	if (free_spin_pick == true) {		// Free Spin Picked
+		def free_spin_complete = result_spin.features[1].complete
+		GlobalVariable.free_spin_complete = free_spin_complete
+		println (&quot;free spin complete is :&quot;+GlobalVariable.free_spin_complete)
+		def free_spin_left = result_spin.features[1].feature_state.free_spins_left
+		GlobalVariable.free_spin_left = free_spin_left
+		println (&quot;free spins left is :&quot;+GlobalVariable.free_spin_left)
+	}
+}</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

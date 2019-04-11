@@ -9,7 +9,7 @@
    <httpBody></httpBody>
    <httpBodyContent>{
   &quot;text&quot;: &quot;{\n    \&quot;player_id\&quot;: \&quot;${player_id}\&quot;,\n    \&quot;session_token\&quot;: \&quot;${rgs_session_token}\&quot;,\n    \&quot;partner_code\&quot;: \&quot;${partner_code}\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;action\&quot;: \&quot;FREE_SPIN\&quot;,\n    \&quot;state_tag\&quot;: \&quot;${state_tag}\&quot;\n}&quot;,
-  &quot;contentType&quot;: &quot;text/plain&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
    <httpBodyType>text</httpBodyType>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>Content-Type</name>
       <type>Main</type>
-      <value>text/plain</value>
+      <value>application/json</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
@@ -55,13 +55,6 @@
       <id>81775165-c804-481b-873f-5ed32c2334d0</id>
       <masked>false</masked>
       <name>state_tag</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.features</defaultValue>
-      <description></description>
-      <id>b2676f78-3fdb-4dd7-8930-27d7389d76f7</id>
-      <masked>false</masked>
-      <name>features</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
@@ -105,6 +98,21 @@ println (&quot;Player ID is :&quot;+GlobalVariable.player_id)
 def features = result_spin.features
 println (&quot;...value extracted is :&quot;+features)
 GlobalVariable.features = features
-println (&quot;Features is :&quot;+GlobalVariable.features)</verificationScript>
+println (&quot;Features is :&quot;+GlobalVariable.features)
+
+if (features != null) {		// Free Spin Triggered
+	def free_spin_pick = result_spin.features[0].complete
+	GlobalVariable.free_spin_pick = free_spin_pick
+	println (&quot;free spin pick is :&quot;+GlobalVariable.free_spin_pick)
+	
+	if (free_spin_pick == true) {		// Free Spin Picked
+		def free_spin_complete = result_spin.features[1].complete
+		GlobalVariable.free_spin_complete = free_spin_complete
+		println (&quot;free spin complete is :&quot;+GlobalVariable.free_spin_complete)
+		def free_spin_left = result_spin.features[1].feature_state.free_spins_left
+		GlobalVariable.free_spin_left = free_spin_left
+		println (&quot;free spins left is :&quot;+GlobalVariable.free_spin_left)
+	}
+}</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

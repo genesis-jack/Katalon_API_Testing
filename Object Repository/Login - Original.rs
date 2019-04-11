@@ -8,8 +8,8 @@
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;2db1e31e20564008484d2d1ab0d74227\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
-  &quot;contentType&quot;: &quot;text/plain&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;83b5dbd8a4f391ec425b6d76e892a722\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
    <httpBodyType>text</httpBodyType>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>Content-Type</name>
       <type>Main</type>
-      <value>text/plain</value>
+      <value>application/json</value>
    </httpHeaderProperties>
    <httpHeaderProperties>
       <isSelected>true</isSelected>
@@ -62,27 +62,6 @@
       <id>469e4f86-9bbc-404c-b32b-4922e3199538</id>
       <masked>false</masked>
       <name>partner</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.free_spin_pick</defaultValue>
-      <description></description>
-      <id>12027dd9-8db8-4b4a-aeaf-c8bdaadd1528</id>
-      <masked>false</masked>
-      <name>free_spin_pick</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.free_spin_complete</defaultValue>
-      <description></description>
-      <id>f6f4c6e3-2a36-48f4-82f8-c6a66a37b54f</id>
-      <masked>false</masked>
-      <name>free_spin_complete</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.free_spin_left</defaultValue>
-      <description></description>
-      <id>f38b7642-745a-4107-b043-0023604ea67a</id>
-      <masked>false</masked>
-      <name>free_spin_left</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
@@ -131,19 +110,23 @@ println (&quot;...value extracted is :&quot;+partner_code)
 GlobalVariable.partner_code = partner_code
 println (&quot;Partner Code is :&quot;+GlobalVariable.partner_code)
 
+
+if (features != null) {		// free spin triggered
 def free_spin_pick = result_login.state.features[0].complete
 println (&quot;...value extracted is :&quot;+free_spin_pick)
 GlobalVariable.free_spin_pick = free_spin_pick
 println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_pick)
-
-def free_spin_complete = result_login.state.features[1].complete
-println (&quot;...value extracted is :&quot;+free_spin_complete)
-GlobalVariable.free_spin_complete = free_spin_complete
-println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_complete)
-
-def free_spin_left = result_login.state.features[1].feature_state.free_spins_left
-println (&quot;...value extracted is :&quot;+free_spin_left)
-GlobalVariable.free_spin_left = free_spin_left
-println (&quot;Free Spin Left is :&quot;+GlobalVariable.free_spin_left)</verificationScript>
+	if (free_spin_pick == true) {		// free spin picked
+		def free_spin_complete = result_login.state.features[1].complete
+		println (&quot;...value extracted is :&quot;+free_spin_complete)
+		GlobalVariable.free_spin_complete = free_spin_complete
+		println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_complete)
+		
+		def free_spin_left = result_login.state.features[1].feature_state.free_spins_left
+		println (&quot;...value extracted is :&quot;+free_spin_left)
+		GlobalVariable.free_spin_left = free_spin_left
+		println (&quot;Free Spin Left is :&quot;+GlobalVariable.free_spin_left)
+	}
+}</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
