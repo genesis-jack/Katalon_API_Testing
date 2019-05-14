@@ -19,31 +19,39 @@ get_session_token = WS.sendRequestAndVerify(findTestObject('Get_Session_Token'))
 login = WS.sendRequestAndVerify(findTestObject('Login'))
 
 for (int i = 1; i <= 50; i++) {
-	def features = GlobalVariable.features
-	def free_spin_pick = GlobalVariable.free_spin_pick
-	def free_spin_complete = GlobalVariable.free_spin_complete
-	def free_spin_left = GlobalVariable.free_spin_left
-	
+    def features = GlobalVariable.features
+
+    def features_type = GlobalVariable.features_type
+
+    def free_spin_pick = GlobalVariable.free_spin_pick
+
+    def free_spin_complete = GlobalVariable.free_spin_complete
+
+    def free_spin_left = GlobalVariable.free_spin_left
+
     if (features == null) {		// Free Spin Not Triggered
         println('features = ' + features)
-		spin_result = WS.sendRequestAndVerify(findTestObject('take-turn_BaseSpin'))
-    } 
-	else if (features != null) {		// Free Spin Triggered
-		println('features = ' + features)
-		println('free spin pick is = ' + free_spin_pick)
-		if (free_spin_pick != true) {		// Free Spin Not Pick Yet
-			WS.sendRequestAndVerify(findTestObject('take-turn_Pick'))
-        }
-		else if (free_spin_pick == true) {		// Free Spin Picked
-			println('features = ' + features)
-			println('free spin pick is = ' + free_spin_pick)
-			if (free_spin_complete != true) {		// Free Spin Not Completed
-				WS.sendRequestAndVerify(findTestObject('take-turn_FreeSpin'))
-				println('free spin left  = ' + free_spin_left)
-            }
-			else if (free_spin_complete == true) {		// Free Spin Completed
-				println('features = ' + features)
-				WS.sendRequestAndVerify(findTestObject('take-turn_BaseSpin'))
+        spin_result = WS.sendRequestAndVerify(findTestObject('take-turn_BaseSpin'))
+    } else if ((features != null) && !('PICK'.equals(features_type))) {		// Features Triggered but Type is not Free Spin
+        println('features = ' + features)
+        spin_result = WS.sendRequestAndVerify(findTestObject('take-turn_BaseSpin'))
+		
+    } else if ((features != null) && 'PICK'.equals(features_type)) {		// Features Triggered and Type is Free Spin
+        println('features = ' + features)
+        println('free spin pick is = ' + free_spin_pick)
+
+        if (free_spin_pick != true) {		// Free Spin Not Pick Yet
+            WS.sendRequestAndVerify(findTestObject('take-turn_Pick'))
+        } else if (free_spin_pick == true) {		// Free Spin Picked
+            println('features = ' + features)
+            println('free spin pick is = ' + free_spin_pick)
+
+            if (free_spin_complete != true) {		        // Free Spin Not Completed
+                WS.sendRequestAndVerify(findTestObject('take-turn_FreeSpin'))
+                println('free spin left  = ' + free_spin_left)
+            } else if (free_spin_complete == true) {		        // Free Spin Completed
+                println('features = ' + features)
+                WS.sendRequestAndVerify(findTestObject('take-turn_BaseSpin'))
             }
         }
     }

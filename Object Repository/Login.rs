@@ -110,22 +110,28 @@ println (&quot;...value extracted is :&quot;+partner_code)
 GlobalVariable.partner_code = partner_code
 println (&quot;Partner Code is :&quot;+GlobalVariable.partner_code)
 
+if (features != null) {
+	def features_type = result_login.state.features[0].type
+	println (&quot;...value extracted is :&quot;+features_type)
+	GlobalVariable.features_type = features_type
+	
+	if (&quot;PICK&quot;.equals(features_type)) {
+		def free_spin_pick = result_login.state.features[0].complete
+		println (&quot;...value extracted is :&quot;+free_spin_pick)
+		GlobalVariable.free_spin_pick = free_spin_pick
+		println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_pick)
 
-if (features != null) {		// free spin triggered
-def free_spin_pick = result_login.state.features[0].complete
-println (&quot;...value extracted is :&quot;+free_spin_pick)
-GlobalVariable.free_spin_pick = free_spin_pick
-println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_pick)
-	if (free_spin_pick == true) {		// free spin picked
-		def free_spin_complete = result_login.state.features[1].complete
-		println (&quot;...value extracted is :&quot;+free_spin_complete)
-		GlobalVariable.free_spin_complete = free_spin_complete
-		println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_complete)
-		
-		def free_spin_left = result_login.state.features[1].feature_state.free_spins_left
-		println (&quot;...value extracted is :&quot;+free_spin_left)
-		GlobalVariable.free_spin_left = free_spin_left
-		println (&quot;Free Spin Left is :&quot;+GlobalVariable.free_spin_left)
+				if (free_spin_pick == true) {		// free spin picked
+					def free_spin_complete = result_login.state.features[1].complete
+					println (&quot;...value extracted is :&quot;+free_spin_complete)
+					GlobalVariable.free_spin_complete = free_spin_complete
+					println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_complete)
+				
+					def free_spin_left = result_login.state.features[1].feature_state.free_spins_left
+					println (&quot;...value extracted is :&quot;+free_spin_left)
+					GlobalVariable.free_spin_left = free_spin_left
+					println (&quot;Free Spin Left is :&quot;+GlobalVariable.free_spin_left)
+			}
 	}
 }</verificationScript>
    <wsdlAddress></wsdlAddress>

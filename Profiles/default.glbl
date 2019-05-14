@@ -59,4 +59,9 @@
       <initValue>''</initValue>
       <name>free_spin_left</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>features_type</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
