@@ -6,9 +6,10 @@
    <elementGuidId>f224b7c5-3e07-4849-aa6a-736cf5e8bd51</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;${session_token}\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;${session_token}\&quot;,\n    \&quot;game_code\&quot;: \&quot;${gamecode}\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -20,30 +21,9 @@
       <type>Main</type>
       <value>application/json</value>
    </httpHeaderProperties>
-   <httpHeaderProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>X-Genesis-PartnerToken</name>
-      <type>Main</type>
-      <value>${partner}</value>
-   </httpHeaderProperties>
-   <httpHeaderProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>X-Genesis-Secret</name>
-      <type>Main</type>
-      <value>${secretkey}</value>
-   </httpHeaderProperties>
-   <httpHeaderProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>Content</name>
-      <type>Main</type>
-      <value>application/json</value>
-   </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://nurgs.star9ad.com/ng/sessions/?</restUrl>
+   <restUrl>https://nurgs.star9ad.com/ng/sessions/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -62,6 +42,13 @@
       <id>469e4f86-9bbc-404c-b32b-4922e3199538</id>
       <masked>false</masked>
       <name>partner</name>
+   </variables>
+   <variables>
+      <defaultValue>'NG-0063'</defaultValue>
+      <description></description>
+      <id>90bc28d0-e75c-4c4d-a09c-5112c5f3929d</id>
+      <masked>false</masked>
+      <name>gamecode</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

@@ -5,4 +5,32 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>ad664648-d81b-4000-a16d-123f15cded62</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('Partner_Data').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>f4e515c9-c529-43ae-b706-065045d6211f</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Partner_Data').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>affbff2d-ea08-4c0f-a7b6-2bded2fda6e1</id>
+      <masked>false</masked>
+      <name>Secret_Key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('PlayerID').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>6e284199-aec8-4285-ab6e-d42fd3f1f0f8</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+   <variable>
+      <defaultValue>'NG-0063'</defaultValue>
+      <description></description>
+      <id>9188dde3-76a9-473b-a56a-fb1b616c5981</id>
+      <masked>false</masked>
+      <name>Game_Code</name>
+   </variable>
 </TestCaseEntity>

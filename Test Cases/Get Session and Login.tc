@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Get Session and Login</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>9a54dad1-09f0-4730-aeed-7dec87da6628</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('Partner_Data').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>b5c094b3-e8ad-432b-a40a-7101179717f9</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Partner_Data').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>2b2dc671-ffda-4318-80a8-b1a19c907619</id>
+      <masked>false</masked>
+      <name>Secret_Key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('PlayerID').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>b070d405-eb4a-4583-ad4a-d3a8ac54796c</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+   <variable>
+      <defaultValue>'NG-0063'</defaultValue>
+      <description></description>
+      <id>1f0d116c-fd57-4a42-a0bf-000c934d8589</id>
+      <masked>false</masked>
+      <name>Game_Code</name>
+   </variable>
+</TestCaseEntity>

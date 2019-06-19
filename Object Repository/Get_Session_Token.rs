@@ -6,6 +6,7 @@
    <elementGuidId>f5c53b73-b0b1-4f21-8ef8-d2cabef77341</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent></httpBodyContent>
    <httpBodyType></httpBodyType>
@@ -26,13 +27,13 @@
    <httpHeaderProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>Content</name>
+      <name>Content-Type</name>
       <type>Main</type>
       <value>application/json</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://${url}/m4/wallet/balance/${player_id}?</restUrl>
+   <restUrl>https://${url}/m4/wallet/balance/${player_id}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -60,7 +61,7 @@
       <name>secretkey</name>
    </variables>
    <variables>
-      <defaultValue>'86577271'</defaultValue>
+      <defaultValue>'WalletPlayer05'</defaultValue>
       <description></description>
       <id>ffde4b70-b21c-4392-83bc-9064107d82de</id>
       <masked>false</masked>

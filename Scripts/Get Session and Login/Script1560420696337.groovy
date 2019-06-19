@@ -13,8 +13,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-response = WS.sendRequestAndVerify(findTestObject('Get_Session_Token'))
+WS.sendRequestAndVerify(findTestObject('Get_Session_Token', [('url') : 'krug-gw-colo.star9ad.com', ('partner') : Partner
+            , ('secretkey') : Secret_Key, ('player_id') : Player_ID, ('session_token') : GlobalVariable.session_token]))
 
-
-WS.sendRequestAndVerify(findTestObject('Login'))
+WS.sendRequestAndVerify(findTestObject('Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner
+            , ('gamecode') : Game_Code]))
 

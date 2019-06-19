@@ -64,4 +64,9 @@
       <initValue>''</initValue>
       <name>features_type</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>game_code</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-06-13T18:15:41</date>
+  <millis>1560420941880</millis>
+  <sequence>0</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startSuite</method>
+  <thread>1</thread>
+  <message>Start Test Suite : Test Suites/Login Game</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="name">Login Game</property>
+  <property name="description"></property>
+  <property name="id">Test Suites/Login Game</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:41</date>
+  <millis>1560420941893</millis>
+  <sequence>1</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>hostName = jack.c - 172.16.60.187</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="hostName">jack.c - 172.16.60.187</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:41</date>
+  <millis>1560420941894</millis>
+  <sequence>2</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>os = Mac OS X 64bit</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="os">Mac OS X 64bit</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:41</date>
+  <millis>1560420941895</millis>
+  <sequence>3</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>hostAddress = 172.16.60.187</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="hostAddress">172.16.60.187</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:41</date>
+  <millis>1560420941895</millis>
+  <sequence>4</sequence>
+  <level>RUN_DATA</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>katalonVersion = 6.1.5.3</message>
+  <nestedLevel>0</nestedLevel>
+  <property name="katalonVersion">6.1.5.3</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:42</date>
+  <millis>1560420942064</millis>
+  <sequence>5</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startTest</method>
+  <thread>1</thread>
+  <message>Start Test Case : Test Cases/Get Session and Login</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="name">Test Cases/Get Session and Login</property>
+  <property name="description"></property>
+  <property name="id">Test Cases/Get Session and Login</property>
+  <property name="source">\\Users\\jack.c\\Katalon Studio\\Kataon_API_Testing\\Test Cases\\Get Session and Login.tc</property>
+  <property name="tag"></property>
+  <property name="isOptional">false</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:42</date>
+  <millis>1560420942083</millis>
+  <sequence>7</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Partner = c304afdf-2f61-6369-c088-924f99e1be1a</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:42</date>
+  <millis>1560420942084</millis>
+  <sequence>8</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Secret_Key = 418184e911563cd861e90db6233d7d6c</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:42</date>
+  <millis>1560420942084</millis>
+  <sequence>9</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Player_ID = WalletPlayer05</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:42</date>
+  <millis>1560420942295</millis>
+  <sequence>10</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendRequest(findTestObject(\&amp;quot;Get_Session_Token\&amp;quot;, [\&amp;quot;url\&amp;quot;:\&amp;quot;krug-gw-colo.star9ad.com\&amp;quot;, \&amp;quot;partner\&amp;quot;:\&amp;quot;c304afdf-2f61-6369-c088-924f99e1be1a\&amp;quot;, \&amp;quot;secretkey\&amp;quot;:\&amp;quot;418184e911563cd861e90db6233d7d6c\&amp;quot;, ... ]))</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">16</property>
+  <property name="stepIndex">1</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944323</millis>
+  <sequence>14</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>HAR: /Users/jack.c/Katalon Studio/Kataon_API_Testing/Reports/Login Game/20190613_181536/requests/main/0.har</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="harId">eb69fd36-f7b2-4dfa-8fdc-77ac482ee16b</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944396</millis>
+  <sequence>15</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Send request successfully</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944396</millis>
+  <sequence>16</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendRequest(findTestObject(\&amp;quot;Get_Session_Token\&amp;quot;, [\&amp;quot;url\&amp;quot;:\&amp;quot;krug-gw-colo.star9ad.com\&amp;quot;, \&amp;quot;partner\&amp;quot;:\&amp;quot;c304afdf-2f61-6369-c088-924f99e1be1a\&amp;quot;, \&amp;quot;secretkey\&amp;quot;:\&amp;quot;418184e911563cd861e90db6233d7d6c\&amp;quot;, ... ]))</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944397</millis>
+  <sequence>17</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendRequest(findTestObject(\&amp;quot;Login\&amp;quot;, [\&amp;quot;session_token\&amp;quot;:session_token, \&amp;quot;partner\&amp;quot;:\&amp;quot;c304afdf-2f61-6369-c088-924f99e1be1a\&amp;quot;]))</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">19</property>
+  <property name="stepIndex">2</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944662</millis>
+  <sequence>20</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>HAR: /Users/jack.c/Katalon Studio/Kataon_API_Testing/Reports/Login Game/20190613_181536/requests/main/1.har</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="harId">3d344e0d-728b-450d-b5e7-ef2f87a3695f</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944668</millis>
+  <sequence>21</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Send request successfully</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944668</millis>
+  <sequence>22</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendRequest(findTestObject(\&amp;quot;Login\&amp;quot;, [\&amp;quot;session_token\&amp;quot;:session_token, \&amp;quot;partner\&amp;quot;:\&amp;quot;c304afdf-2f61-6369-c088-924f99e1be1a\&amp;quot;]))</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944669</millis>
+  <sequence>23</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Test Cases/Get Session and Login</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944669</millis>
+  <sequence>24</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endTest</method>
+  <thread>1</thread>
+  <message>End Test Case : Test Cases/Get Session and Login</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944672</millis>
+  <sequence>25</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startTest</method>
+  <thread>1</thread>
+  <message>Start Test Case : Test Cases/Get Session and Login</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="name">Test Cases/Get Session and Login</property>
+  <property name="description"></property>
+  <property name="id">Test Cases/Get Session and Login</property>
+  <property name="source">\\Users\\jack.c\\Katalon Studio\\Kataon_API_Testing\\Test Cases\\Get Session and Login.tc</property>
+  <property name="tag"></property>
+  <property name="isOptional">false</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944678</millis>
+  <sequence>27</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Partner = db7b3a43-89c6-3751-16e6-baa24434b393</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944678</millis>
+  <sequence>28</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Secret_Key = fac49991cbd38efd9131894b9a1a0350</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944678</millis>
+  <sequence>29</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Player_ID = GPK_HouseTestUserCNY01</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944679</millis>
+  <sequence>30</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendRequest(findTestObject(\&amp;quot;Get_Session_Token\&amp;quot;, [\&amp;quot;url\&amp;quot;:\&amp;quot;krug-gw-colo.star9ad.com\&amp;quot;, \&amp;quot;partner\&amp;quot;:\&amp;quot;c304afdf-2f61-6369-c088-924f99e1be1a\&amp;quot;, \&amp;quot;secretkey\&amp;quot;:\&amp;quot;418184e911563cd861e90db6233d7d6c\&amp;quot;, ... ]))</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">16</property>
+  <property name="stepIndex">1</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944984</millis>
+  <sequence>34</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>HAR: /Users/jack.c/Katalon Studio/Kataon_API_Testing/Reports/Login Game/20190613_181536/requests/main/2.har</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="harId">b90df781-f4ca-4d9d-84c4-c0ed07d2ea0e</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944986</millis>
+  <sequence>35</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Send request successfully</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944986</millis>
+  <sequence>36</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendRequest(findTestObject(\&amp;quot;Get_Session_Token\&amp;quot;, [\&amp;quot;url\&amp;quot;:\&amp;quot;krug-gw-colo.star9ad.com\&amp;quot;, \&amp;quot;partner\&amp;quot;:\&amp;quot;c304afdf-2f61-6369-c088-924f99e1be1a\&amp;quot;, \&amp;quot;secretkey\&amp;quot;:\&amp;quot;418184e911563cd861e90db6233d7d6c\&amp;quot;, ... ]))</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:44</date>
+  <millis>1560420944986</millis>
+  <sequence>37</sequence>
+  <level>START</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>startKeyword</method>
+  <thread>1</thread>
+  <message>Start action : sendRequest(findTestObject(\&amp;quot;Login\&amp;quot;, [\&amp;quot;session_token\&amp;quot;:session_token, \&amp;quot;partner\&amp;quot;:\&amp;quot;c304afdf-2f61-6369-c088-924f99e1be1a\&amp;quot;]))</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="startLine">19</property>
+  <property name="stepIndex">2</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:45</date>
+  <millis>1560420945218</millis>
+  <sequence>40</sequence>
+  <level>INFO</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>HAR: /Users/jack.c/Katalon Studio/Kataon_API_Testing/Reports/Login Game/20190613_181536/requests/main/3.har</message>
+  <nestedLevel>1</nestedLevel>
+  <property name="harId">97518565-0909-4fb9-b6a8-cb4d4fcda8d4</property>
+</record>
+<record>
+  <date>2019-06-13T18:15:45</date>
+  <millis>1560420945219</millis>
+  <sequence>41</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Send request successfully</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:45</date>
+  <millis>1560420945220</millis>
+  <sequence>42</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endKeyword</method>
+  <thread>1</thread>
+  <message>End action : sendRequest(findTestObject(\&amp;quot;Login\&amp;quot;, [\&amp;quot;session_token\&amp;quot;:session_token, \&amp;quot;partner\&amp;quot;:\&amp;quot;c304afdf-2f61-6369-c088-924f99e1be1a\&amp;quot;]))</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:45</date>
+  <millis>1560420945220</millis>
+  <sequence>43</sequence>
+  <level>PASSED</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>logMessage</method>
+  <thread>1</thread>
+  <message>Test Cases/Get Session and Login</message>
+  <nestedLevel>1</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:45</date>
+  <millis>1560420945220</millis>
+  <sequence>44</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endTest</method>
+  <thread>1</thread>
+  <message>End Test Case : Test Cases/Get Session and Login</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+<record>
+  <date>2019-06-13T18:15:45</date>
+  <millis>1560420945245</millis>
+  <sequence>45</sequence>
+  <level>END</level>
+  <class>com.kms.katalon.core.logging.XmlKeywordLogger</class>
+  <method>endSuite</method>
+  <thread>1</thread>
+  <message>End Test Suite : Test Suites/Login Game</message>
+  <nestedLevel>0</nestedLevel>
+</record>
+</log>

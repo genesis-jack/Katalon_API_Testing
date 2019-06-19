@@ -6,9 +6,10 @@
    <elementGuidId>a22fc202-0950-4cf8-9d9a-3ad89598feb0</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;3deded946e4eefce2cb6efe28ec14850\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;ef6e190c80ad418620b56bbbf939a19c\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -20,30 +21,9 @@
       <type>Main</type>
       <value>application/json</value>
    </httpHeaderProperties>
-   <httpHeaderProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>X-Genesis-PartnerToken</name>
-      <type>Main</type>
-      <value>${partner}</value>
-   </httpHeaderProperties>
-   <httpHeaderProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>X-Genesis-Secret</name>
-      <type>Main</type>
-      <value>${secretkey}</value>
-   </httpHeaderProperties>
-   <httpHeaderProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>Content</name>
-      <type>Main</type>
-      <value>application/json</value>
-   </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://nurgs.star9ad.com/ng/sessions/?</restUrl>
+   <restUrl>https://nurgs.star9ad.com/ng/sessions/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -109,6 +89,12 @@ def partner_code = result_login.state.partner_code
 println (&quot;...value extracted is :&quot;+partner_code)
 GlobalVariable.partner_code = partner_code
 println (&quot;Partner Code is :&quot;+GlobalVariable.partner_code)
+
+def partner_code = result_login.state.game_code
+println (&quot;...value extracted is :&quot;+game_code)
+GlobalVariable.game_code = game_code
+println (&quot;Partner Code is :&quot;+GlobalVariable.partner_code)
+
 
 if (features != null) {
 	def features_type = result_login.state.features[0].type

@@ -6,9 +6,10 @@
    <elementGuidId>25d4623a-d825-470c-91dd-e7e378171a52</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;player_id\&quot;: \&quot;${player_id}\&quot;,\n    \&quot;session_token\&quot;: \&quot;${rgs_session_token}\&quot;,\n    \&quot;partner_code\&quot;: \&quot;${partner_code}\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;action\&quot;: \&quot;FREE_SPIN\&quot;,\n    \&quot;state_tag\&quot;: \&quot;${state_tag}\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;player_id\&quot;: \&quot;${player_id}\&quot;,\n    \&quot;session_token\&quot;: \&quot;${rgs_session_token}\&quot;,\n    \&quot;partner_code\&quot;: \&quot;${partner_code}\&quot;,\n    \&quot;game_code\&quot;: \&quot;${gamecode}\&quot;,\n    \&quot;action\&quot;: \&quot;FREE_SPIN\&quot;,\n    \&quot;state_tag\&quot;: \&quot;${state_tag}\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -22,7 +23,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://nurgs.star9ad.com/ng/take-turn/?</restUrl>
+   <restUrl>https://nurgs.star9ad.com/ng/take-turn/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -55,6 +56,13 @@
       <id>81775165-c804-481b-873f-5ed32c2334d0</id>
       <masked>false</masked>
       <name>state_tag</name>
+   </variables>
+   <variables>
+      <defaultValue>findTestData('Game_Data').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>95e6890f-4cd3-4ca0-ab30-6d5506d2c5d1</id>
+      <masked>false</masked>
+      <name>gamecode</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
