@@ -15,66 +15,65 @@ import internal.GlobalVariable as GlobalVariable
 import net.bytebuddy.implementation.bytecode.constant.NullConstant as NullConstant
 
 get_session_token = WS.sendRequestAndVerify(findTestObject('Get_Session_Token', [('url') : 'krug-gw-colo.star9ad.com', ('partner') : Partner
-            , ('secretkey') : Secret_Key, ('player_id') : Player_ID, ('session_token') : GlobalVariable.session_token]))
+			, ('secretkey') : Secret_Key, ('player_id') : Player_ID, ('session_token') : GlobalVariable.session_token]))
 
-login = WS.sendRequestAndVerify(findTestObject('Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner
-            , ('gamecode') : Game_Code]))
+login = WS.sendRequestAndVerify(findTestObject('NuRGS/Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner
+			, ('gamecode') : Game_Code]))
 
-for (int i = 1; i <= 2; i++) {
-    def features = GlobalVariable.features
+for (int i = 1; i <= 50; i++) {
+	def features = GlobalVariable.features
+	def features_type = GlobalVariable.features_type
+	def free_spin_pick = GlobalVariable.free_spin_pick
+	def free_spin_complete = GlobalVariable.free_spin_complete
+	def free_spin_left = GlobalVariable.free_spin_left
 
-    def features_type = GlobalVariable.features_type
+// Free Spin Not Triggered
+	if (features == null) {
+		println('features = ' + features)
+		spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_BaseSpin', [('player_id') : GlobalVariable.player_id
+					, ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
+					, ('state_tag') : GlobalVariable.state_tag, ('gamecode') : Game_Code]))
+	}
+// Spin With Booster (eg. Free Run With Super Wild Booster)
+	else if ((features != null) && !('PICK'.equals(features_type))) {
+		println('features = ' + features)
+		spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_BaseSpin', [('player_id') : GlobalVariable.player_id
+					, ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
+					, ('state_tag') : GlobalVariable.state_tag, ('gamecode') : Game_Code]))
 
-    def free_spin_pick = GlobalVariable.free_spin_pick
+	}
+// Free Spin Triggered And Not Pick
+	else if ((features != null) && 'PICK'.equals(features_type)) {
+		println('features = ' + features)
+		println('free spin pick is = ' + free_spin_pick)
 
-    def free_spin_complete = GlobalVariable.free_spin_complete
-
-    def free_spin_left = GlobalVariable.free_spin_left
-
-    if (features == null) {
-        // Free Spin Not Triggered
-        println('features = ' + features)
-
-        spin_result = WS.sendRequestAndVerify(findTestObject('take-turn_BaseSpin', [('player_id') : GlobalVariable.player_id
-                    , ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
-                    , ('state_tag') : GlobalVariable.state_tag, ('gamecode') : Game_Code]) // Free Spin Not Pick Yet
-            ) // Free Spin Picked
-        // Free Spin Not Completed
-        // Free Spin Completed
-    } else if ((features != null) && !('PICK'.equals(features_type))) {
-        println('features = ' + features)
-
-        spin_result = WS.sendRequestAndVerify(findTestObject('take-turn_BaseSpin', [('player_id') : GlobalVariable.player_id
-                    , ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
-                    , ('state_tag') : GlobalVariable.state_tag, ('gamecode') : Game_Code]))
-    } else if ((features != null) && 'PICK'.equals(features_type)) {
-        println('features = ' + features)
-
-        println('free spin pick is = ' + free_spin_pick)
-
-        if (free_spin_pick != true) {
-            WS.sendRequestAndVerify(findTestObject('take-turn_Pick', [('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code
-                        , ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag
-                        , ('gamecode') : Game_Code]))
-        } else if (free_spin_pick == true) {
-            println('features = ' + features)
-
-            println('free spin pick is = ' + free_spin_pick)
-
-            if (free_spin_complete != true) {
-                WS.sendRequestAndVerify(findTestObject('take-turn_FreeSpin', [('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code
-                            , ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag
-                            , ('gamecode') : Game_Code]))
-
-                println('free spin left  = ' + free_spin_left)
-            } else if (free_spin_complete == true) {
-                println('features = ' + features)
-
-                WS.sendRequestAndVerify(findTestObject('take-turn_BaseSpin', [('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code
-                            , ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag
-                            , ('gamecode') : Game_Code]))
-            }
-        }
-    }
+// Free Spin Triggered And Not Pick
+		if (free_spin_pick != true) {
+			WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_Pick', [('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code
+						, ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag
+						, ('gamecode') : Game_Code]))
+		}
+		
+// Free Spin Triggered And Pick
+		else if (free_spin_pick == true) {
+			println('features = ' + features)
+			println('free spin pick is = ' + free_spin_pick)
+			
+// Free Spin Not Complete
+			if (free_spin_complete != true) {
+				WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_FreeSpin', [('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code
+							, ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag
+							, ('gamecode') : Game_Code]))
+				println('free spin left  = ' + free_spin_left)
+			}
+			
+// Free Spin Complete
+			else if (free_spin_complete == true) {
+				println('features = ' + features)
+				WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_BaseSpin', [('player_id') : GlobalVariable.player_id, ('partner_code') : GlobalVariable.partner_code
+							, ('rgs_session_token') : GlobalVariable.rgs_session_token, ('state_tag') : GlobalVariable.state_tag
+							, ('gamecode') : Game_Code]))
+			}
+		}
+	}
 }
-

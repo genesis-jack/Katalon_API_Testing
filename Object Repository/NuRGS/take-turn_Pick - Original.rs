@@ -6,6 +6,7 @@
    <elementGuidId>7433b70b-a24e-4092-9d41-90c1bd920a90</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
   &quot;text&quot;: &quot;{\n   \&quot;player_id\&quot;: \&quot;1571102\&quot;,\n   \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n   \&quot;choice_id\&quot;: \&quot;FS_20\&quot;,\n   \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n   \&quot;action\&quot;: \&quot;PICK\&quot;,\n   \&quot;session_token\&quot;: \&quot;ef4614bc-a782-4a70-aee8-7e0f5323e763\&quot;,\n   \&quot;state_tag\&quot;:\&quot;2E547523\&quot;,\n   \&quot;bet_denom_index\&quot;: 1\n}&quot;,

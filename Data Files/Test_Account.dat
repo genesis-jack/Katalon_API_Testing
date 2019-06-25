@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFileEntity>
    <description></description>
-   <name>PlayerID</name>
+   <name>Test_Account</name>
    <tag></tag>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
@@ -11,6 +11,6 @@
    <isInternalPath>false</isInternalPath>
    <query></query>
    <secureUserAccount>false</secureUserAccount>
-   <sheetName>Test Account</sheetName>
+   <sheetName>Test_Account</sheetName>
    <usingGlobalDBSetting>false</usingGlobalDBSetting>
 </DataFileEntity>

@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 response0 = WS.sendRequestAndVerify(findTestObject('Get_Session_Token'))
 
-response1 = WS.sendRequestAndVerify(findTestObject('Login'))
+response1 = WS.sendRequestAndVerify(findTestObject('NuRGS/Login'))
 
 def login = new groovy.json.JsonSlurper()
 

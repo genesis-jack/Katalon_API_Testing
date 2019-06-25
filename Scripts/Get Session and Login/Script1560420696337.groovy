@@ -16,6 +16,6 @@ import internal.GlobalVariable as GlobalVariable
 WS.sendRequestAndVerify(findTestObject('Get_Session_Token', [('url') : 'krug-gw-colo.star9ad.com', ('partner') : Partner
             , ('secretkey') : Secret_Key, ('player_id') : Player_ID, ('session_token') : GlobalVariable.session_token]))
 
-WS.sendRequestAndVerify(findTestObject('Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner
+WS.sendRequestAndVerify(findTestObject('NuRGS/Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner
             , ('gamecode') : Game_Code]))
 

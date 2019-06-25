@@ -6,6 +6,7 @@
    <elementGuidId>4bfa9ada-7e17-4571-896f-ef5c460d6a05</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
   &quot;text&quot;: &quot;{\n   \&quot;player_id\&quot;: \&quot;BBIN_RMB-1\&quot;,\n   \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n   \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n   \&quot;action\&quot;: \&quot;SPIN\&quot;,\n   \&quot;session_token\&quot;: \&quot;0bafd8e0-9454-4f27-9ceb-41166e760643\&quot;,\n   \&quot;state_tag\&quot;:\&quot;E8C59186\&quot;,\n   \&quot;bet_denom_index\&quot;: 1\n}&quot;,

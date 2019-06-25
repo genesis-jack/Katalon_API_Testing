@@ -6,6 +6,7 @@
    <elementGuidId>9333c926-657a-4a57-8b28-6fecdf6561f3</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
   &quot;text&quot;: &quot;{\n    \&quot;player_id\&quot;: \&quot;1571102\&quot;,\n    \&quot;session_token\&quot;: \&quot;1aaa3424-8318-4912-bbac-9b91bae82e1e\&quot;,\n    \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;action\&quot;: \&quot;FREE_SPIN\&quot;,\n    \&quot;state_tag\&quot;: \&quot;F6F245D5\&quot;\n}&quot;,
