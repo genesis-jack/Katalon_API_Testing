@@ -13,7 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-response0 = WS.sendRequestAndVerify(findTestObject('Get_Session_Token'))
+response0 = WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token'))
 
 response1 = WS.sendRequestAndVerify(findTestObject('NuRGS/Login'))
 

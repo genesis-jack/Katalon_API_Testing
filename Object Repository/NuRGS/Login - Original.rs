@@ -9,7 +9,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;ef6e190c80ad418620b56bbbf939a19c\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;f44e6d2d4ebb2f741ab1e1e8569bc546\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-1012\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -90,24 +90,21 @@ println (&quot;...value extracted is :&quot;+partner_code)
 GlobalVariable.partner_code = partner_code
 println (&quot;Partner Code is :&quot;+GlobalVariable.partner_code)
 
-def partner_code = result_login.state.game_code
-println (&quot;...value extracted is :&quot;+game_code)
-GlobalVariable.game_code = game_code
-println (&quot;Partner Code is :&quot;+GlobalVariable.partner_code)
-
-
 if (features != null) {
+	// Feature Triggered
 	def features_type = result_login.state.features[0].type
 	println (&quot;...value extracted is :&quot;+features_type)
 	GlobalVariable.features_type = features_type
 	
 	if (&quot;PICK&quot;.equals(features_type)) {
+		// Feature Type Is Pick
 		def free_spin_pick = result_login.state.features[0].complete
 		println (&quot;...value extracted is :&quot;+free_spin_pick)
 		GlobalVariable.free_spin_pick = free_spin_pick
 		println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_pick)
 
-				if (free_spin_pick == true) {		// free spin picked
+				if (free_spin_pick == true) {
+					// Free Spin Picked
 					def free_spin_complete = result_login.state.features[1].complete
 					println (&quot;...value extracted is :&quot;+free_spin_complete)
 					GlobalVariable.free_spin_complete = free_spin_complete
@@ -118,6 +115,18 @@ if (features != null) {
 					GlobalVariable.free_spin_left = free_spin_left
 					println (&quot;Free Spin Left is :&quot;+GlobalVariable.free_spin_left)
 			}
+	}
+	else if (&quot;FREE_SPIN&quot;.equals(features_type)) {
+		// Feature Type Is FREE_SPIN
+		def free_spin_complete = result_login.state.features[0].complete
+		println (&quot;...value extracted is :&quot;+free_spin_complete)
+		GlobalVariable.free_spin_complete = free_spin_complete
+		println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_complete)
+	
+		def free_spin_left = result_login.state.features[0].feature_state.free_spins_left
+		println (&quot;...value extracted is :&quot;+free_spin_left)
+		GlobalVariable.free_spin_left = free_spin_left
+		println (&quot;Free Spin Left is :&quot;+GlobalVariable.free_spin_left)
 	}
 }</verificationScript>
    <wsdlAddress></wsdlAddress>

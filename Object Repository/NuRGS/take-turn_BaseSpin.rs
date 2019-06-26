@@ -64,7 +64,9 @@
       <masked>false</masked>
       <name>gamecode</name>
    </variables>
-   <verificationScript>import static org.assertj.core.api.Assertions.*
+   <verificationScript>// BASE SPIN
+// FREE SPIN
+import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
 import com.kms.katalon.core.testobject.ResponseObject
@@ -73,14 +75,10 @@ import com.kms.katalon.core.webservice.verification.WSResponseManager
 
 import groovy.json.JsonSlurper
 import internal.GlobalVariable as GlobalVariable
-import net.bytebuddy.implementation.bytecode.constant.NullConstant
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
-
-
-
 
 WS.verifyResponseStatusCode(response, 200)
 
@@ -92,35 +90,38 @@ def result_spin = spin.parseText(response.getResponseBodyContent())
 def rgssessiontoken = result_spin.session_token
 println (&quot;...value extracted is :&quot;+rgssessiontoken)
 GlobalVariable.rgs_session_token = rgssessiontoken
-println (&quot;rgs session is :&quot;+GlobalVariable.rgs_session_token)
+println (&quot;RGS Session Token is :&quot;+GlobalVariable.rgs_session_token)
 
 def statetag = result_spin.state_tag
 println (&quot;...value extracted is :&quot;+statetag)
 GlobalVariable.state_tag = statetag
-println (&quot;state tag is :&quot;+GlobalVariable.state_tag)
+println (&quot;State Tag is :&quot;+GlobalVariable.state_tag)
 
 def playerid = result_spin.player_id
 println (&quot;...value extracted is :&quot;+playerid)
 GlobalVariable.player_id = playerid
-println (&quot;player id is :&quot;+GlobalVariable.player_id)
+println (&quot;Player ID is :&quot;+GlobalVariable.player_id)
 
 def features = result_spin.features
 println (&quot;...value extracted is :&quot;+features)
 GlobalVariable.features = features
-println (&quot;features is :&quot;+GlobalVariable.features)
+println (&quot;Features is :&quot;+GlobalVariable.features)
 
-if (features != null) {		// Free Spin Triggered
+if (features != null) {
+	// Features Triggered
 	def features_type = result_spin.features[0].type
 	println (&quot;...value extracted is :&quot;+features)
 	GlobalVariable.features_type = features_type
 	println (&quot;features is :&quot;+GlobalVariable.features_type)
-	
-	if (&quot;PICK&quot;.equals(features_type)) {
+
+	if ('PICK'.equals(features_type)) {
+		// Features Is PICK
 		def free_spin_pick = result_spin.features[0].complete
 		GlobalVariable.free_spin_pick = free_spin_pick
 		println (&quot;free spin pick is :&quot;+GlobalVariable.free_spin_pick)
-		
-		if (free_spin_pick == true) {		// Free Spin Picked
+
+		if (free_spin_pick == true) {
+			// Free Spin Picked
 			def free_spin_complete = result_spin.features[1].complete
 			GlobalVariable.free_spin_complete = free_spin_complete
 			println (&quot;free spin complete is :&quot;+GlobalVariable.free_spin_complete)
@@ -128,7 +129,16 @@ if (features != null) {		// Free Spin Triggered
 			GlobalVariable.free_spin_left = free_spin_left
 			println (&quot;free spins left is :&quot;+GlobalVariable.free_spin_left)
 		}
-	}	
+	}
+	else if ('FREE_SPIN'.equals(features_type)) {
+		// Features Is FREE_SPIN
+		def free_spin_complete = result_spin.features[0].complete
+		GlobalVariable.free_spin_complete = free_spin_complete
+		println (&quot;free spin complete is :&quot;+GlobalVariable.free_spin_complete)
+		def free_spin_left = result_spin.features[0].feature_state.free_spins_left
+		GlobalVariable.free_spin_left = free_spin_left
+		println (&quot;free spins left is :&quot;+GlobalVariable.free_spin_left)
+	}
 }</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

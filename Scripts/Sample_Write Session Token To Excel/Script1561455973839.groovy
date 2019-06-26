@@ -17,7 +17,7 @@ import internal.GlobalVariable as GlobalVariable
 import java.util.ArrayList as ArrayList
 import jxl.write.WriteException as WriteException
 
-get_session_token = WS.sendRequestAndVerify(findTestObject('Get_Session_Token'))
+get_session_token = WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token'))
 
 String session = GlobalVariable.session_token
 

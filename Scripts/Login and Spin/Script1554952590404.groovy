@@ -14,7 +14,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import net.bytebuddy.implementation.bytecode.constant.NullConstant as NullConstant
 
-get_session_token = WS.sendRequestAndVerify(findTestObject('Get_Session_Token', [('url') : 'krug-gw-colo.star9ad.com', ('partner') : Partner
+get_session_token = WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url') : 'krug-gw-colo.star9ad.com', ('partner') : Partner
 			, ('secretkey') : Secret_Key, ('player_id') : Player_ID, ('session_token') : GlobalVariable.session_token]))
 
 login = WS.sendRequestAndVerify(findTestObject('NuRGS/Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner

@@ -64,7 +64,8 @@
       <masked>false</masked>
       <name>gamecode</name>
    </variables>
-   <verificationScript>import static org.assertj.core.api.Assertions.*
+   <verificationScript>// FREE SPIN
+import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
 import com.kms.katalon.core.testobject.ResponseObject
@@ -77,9 +78,6 @@ import internal.GlobalVariable as GlobalVariable
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
-
-
-
 
 WS.verifyResponseStatusCode(response, 200)
 
@@ -108,16 +106,35 @@ println (&quot;...value extracted is :&quot;+features)
 GlobalVariable.features = features
 println (&quot;Features is :&quot;+GlobalVariable.features)
 
-if (features != null) {		// Free Spin Triggered
-	def free_spin_pick = result_spin.features[0].complete
-	GlobalVariable.free_spin_pick = free_spin_pick
-	println (&quot;free spin pick is :&quot;+GlobalVariable.free_spin_pick)
-	
-	if (free_spin_pick == true) {		// Free Spin Picked
-		def free_spin_complete = result_spin.features[1].complete
+if (features != null) {
+	// Features Triggered
+	def features_type = result_spin.features[0].type
+	println (&quot;...value extracted is :&quot;+features)
+	GlobalVariable.features_type = features_type
+	println (&quot;features is :&quot;+GlobalVariable.features_type)
+
+	if ('PICK'.equals(features_type)) {
+		// Features Is PICK
+		def free_spin_pick = result_spin.features[0].complete
+		GlobalVariable.free_spin_pick = free_spin_pick
+		println (&quot;free spin pick is :&quot;+GlobalVariable.free_spin_pick)
+
+		if (free_spin_pick == true) {
+			// Free Spin Picked
+			def free_spin_complete = result_spin.features[1].complete
+			GlobalVariable.free_spin_complete = free_spin_complete
+			println (&quot;free spin complete is :&quot;+GlobalVariable.free_spin_complete)
+			def free_spin_left = result_spin.features[1].feature_state.free_spins_left
+			GlobalVariable.free_spin_left = free_spin_left
+			println (&quot;free spins left is :&quot;+GlobalVariable.free_spin_left)
+		}
+	}
+	else if ('FREE_SPIN'.equals(features_type)) {
+		// Features Is FREE_SPIN
+		def free_spin_complete = result_spin.features[0].complete
 		GlobalVariable.free_spin_complete = free_spin_complete
 		println (&quot;free spin complete is :&quot;+GlobalVariable.free_spin_complete)
-		def free_spin_left = result_spin.features[1].feature_state.free_spins_left
+		def free_spin_left = result_spin.features[0].feature_state.free_spins_left
 		GlobalVariable.free_spin_left = free_spin_left
 		println (&quot;free spins left is :&quot;+GlobalVariable.free_spin_left)
 	}

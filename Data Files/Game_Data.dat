@@ -6,11 +6,11 @@
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
    <dataFileGUID>9f6f4e5d-49e7-4dcb-b77b-6805c5799bb7</dataFileGUID>
-   <dataSourceUrl>/Users/jack.c/Downloads/QA/Game Data.xlsx</dataSourceUrl>
+   <dataSourceUrl>/Users/jack.c/Katalon Studio/_Projects/Kataon_API_Testing/Data Files/Test Data_Partner_and_Player .xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>false</isInternalPath>
    <query></query>
    <secureUserAccount>false</secureUserAccount>
-   <sheetName>Game List</sheetName>
+   <sheetName>Partner_Data</sheetName>
    <usingGlobalDBSetting>false</usingGlobalDBSetting>
 </DataFileEntity>
