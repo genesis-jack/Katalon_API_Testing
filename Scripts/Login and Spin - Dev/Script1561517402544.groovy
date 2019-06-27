@@ -20,7 +20,7 @@ WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url') : 'k
 WS.sendRequestAndVerify(findTestObject('NuRGS/Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner
 			, ('gamecode') : Game_Code]))
 
-for (int i = 1; i <= 100; i++) {
+for (int i = 1; i <= 10; i++) {
 	def features = GlobalVariable.features
 	def features_type = GlobalVariable.features_type
 	def free_spin_pick = GlobalVariable.free_spin_pick

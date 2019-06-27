@@ -20,7 +20,7 @@
       <name>Secret_Key</name>
    </variable>
    <variable>
-      <defaultValue>findTestData('Test_Account').getValue(2, 1)</defaultValue>
+      <defaultValue>findTestData('Test_Account').getValue(5, 1)</defaultValue>
       <description></description>
       <id>6e284199-aec8-4285-ab6e-d42fd3f1f0f8</id>
       <masked>false</masked>
