@@ -67,11 +67,6 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
-      <name>game_code</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
       <name>user_id</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -98,5 +93,10 @@
       <description></description>
       <initValue>''</initValue>
       <name>bet_value</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>game_code</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

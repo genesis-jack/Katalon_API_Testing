@@ -47,32 +47,25 @@
       <name>url</name>
    </variables>
    <variables>
-      <defaultValue>'c304afdf-2f61-6369-c088-924f99e1be1a'</defaultValue>
+      <defaultValue>findTestData('Partner_Data').getValue(2, 1)</defaultValue>
       <description></description>
       <id>f6c5ad29-4d99-41d2-b17e-a8fdfb1fdd64</id>
       <masked>false</masked>
       <name>partner</name>
    </variables>
    <variables>
-      <defaultValue>'418184e911563cd861e90db6233d7d6c'</defaultValue>
+      <defaultValue>findTestData('Partner_Data').getValue(3, 1)</defaultValue>
       <description></description>
       <id>fddf52b3-f2fb-4c1e-9b9a-d102c8badab7</id>
       <masked>false</masked>
       <name>secretkey</name>
    </variables>
    <variables>
-      <defaultValue>'WalletPlayer05'</defaultValue>
+      <defaultValue>findTestData('Test_Account').getValue(5, 1)</defaultValue>
       <description></description>
-      <id>ffde4b70-b21c-4392-83bc-9064107d82de</id>
+      <id>4673a9c8-2fd2-483b-962b-61d307e48dab</id>
       <masked>false</masked>
       <name>player_id</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.session_token</defaultValue>
-      <description></description>
-      <id>52fcf816-ab29-4750-9b6f-28004d9ac628</id>
-      <masked>false</masked>
-      <name>session_token</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

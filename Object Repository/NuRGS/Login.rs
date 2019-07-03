@@ -9,7 +9,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;${session_token}\&quot;,\n    \&quot;game_code\&quot;: \&quot;${gamecode}\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;partner_token\&quot;: \&quot;${partner}\&quot;,\n    \&quot;player_token\&quot;: \&quot;${session_token}\&quot;,\n    \&quot;game_code\&quot;: \&quot;${game_code}\&quot;,\n    \&quot;device\&quot;: \&quot;DESKTOP\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -37,18 +37,18 @@
       <name>session_token</name>
    </variables>
    <variables>
-      <defaultValue>'c304afdf-2f61-6369-c088-924f99e1be1a'</defaultValue>
+      <defaultValue>findTestData('Partner_Data').getValue(2, 1)</defaultValue>
       <description></description>
       <id>469e4f86-9bbc-404c-b32b-4922e3199538</id>
       <masked>false</masked>
       <name>partner</name>
    </variables>
    <variables>
-      <defaultValue>'NG-0063'</defaultValue>
+      <defaultValue>findTestData('Game_Data').getValue(4, 1)</defaultValue>
       <description></description>
       <id>90bc28d0-e75c-4c4d-a09c-5112c5f3929d</id>
       <masked>false</masked>
-      <name>gamecode</name>
+      <name>game_code</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

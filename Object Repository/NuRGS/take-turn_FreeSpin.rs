@@ -9,7 +9,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;player_id\&quot;: \&quot;${player_id}\&quot;,\n    \&quot;session_token\&quot;: \&quot;${rgs_session_token}\&quot;,\n    \&quot;partner_code\&quot;: \&quot;${partner_code}\&quot;,\n    \&quot;game_code\&quot;: \&quot;${gamecode}\&quot;,\n    \&quot;action\&quot;: \&quot;FREE_SPIN\&quot;,\n    \&quot;state_tag\&quot;: \&quot;${state_tag}\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;player_id\&quot;: \&quot;${player_id}\&quot;,\n    \&quot;session_token\&quot;: \&quot;${rgs_session_token}\&quot;,\n    \&quot;partner_code\&quot;: \&quot;${partner_code}\&quot;,\n    \&quot;game_code\&quot;: \&quot;${game_code}\&quot;,\n    \&quot;action\&quot;: \&quot;FREE_SPIN\&quot;,\n    \&quot;state_tag\&quot;: \&quot;${state_tag}\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -58,11 +58,11 @@
       <name>state_tag</name>
    </variables>
    <variables>
-      <defaultValue>findTestData('Game_Data').getValue(2, 1)</defaultValue>
+      <defaultValue>findTestData('Game_Data').getValue(4, 1)</defaultValue>
       <description></description>
       <id>95e6890f-4cd3-4ca0-ab30-6d5506d2c5d1</id>
       <masked>false</masked>
-      <name>gamecode</name>
+      <name>game_code</name>
    </variables>
    <verificationScript>// FREE SPIN
 import static org.assertj.core.api.Assertions.*
