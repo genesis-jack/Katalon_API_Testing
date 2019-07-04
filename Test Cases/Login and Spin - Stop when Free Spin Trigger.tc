@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Login and Spin - Dev</name>
+   <name>Login and Spin - Stop when Free Spin Trigger</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>ad664648-d81b-4000-a16d-123f15cded62</testCaseGuid>
@@ -27,7 +27,7 @@
       <name>Player_ID</name>
    </variable>
    <variable>
-      <defaultValue>'NG-0063'</defaultValue>
+      <defaultValue>findTestData('Game_Data').getValue(4, 1)</defaultValue>
       <description></description>
       <id>9188dde3-76a9-473b-a56a-fb1b616c5981</id>
       <masked>false</masked>

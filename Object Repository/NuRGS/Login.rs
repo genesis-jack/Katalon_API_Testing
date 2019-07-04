@@ -51,89 +51,86 @@
       <name>game_code</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
-
 import com.kms.katalon.core.testobject.RequestObject
 import com.kms.katalon.core.testobject.ResponseObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webservice.verification.WSResponseManager
-
 import groovy.json.JsonSlurper
 import internal.GlobalVariable as GlobalVariable
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
-
-
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
 WS.verifyResponseStatusCode(response, 200)
 
 assertThat(response.getStatusCode()).isEqualTo(200)
 
+String newline = System.getProperty(&quot;line.separator&quot;)
 def login = new groovy.json.JsonSlurper()
 def result_login = login.parseText(response.getResponseBodyContent())
-
 def rgssessiontoken = result_login.state.session_token
-println (&quot;...value extracted is :&quot;+rgssessiontoken)
+println (&quot;**** RGS Session is **** :&quot;+newline+&quot;**** &quot;+rgssessiontoken+&quot; ****&quot;)
 GlobalVariable.rgs_session_token = rgssessiontoken
-println (&quot;RGS Session is :&quot;+GlobalVariable.rgs_session_token)
+println (&quot;**** RGS Session is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.rgs_session_token+&quot; ****&quot;)
 
 def features = result_login.state.features
-println (&quot;...value extracted is :&quot;+features)
+println (&quot;**** Features is **** :&quot;+newline+&quot;**** &quot;+features+&quot; ****&quot;)
 GlobalVariable.features = features
-println (&quot;Features is :&quot;+GlobalVariable.features)
+println (&quot;**** Features is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.features+&quot; ****&quot;)
 
 def statetag = result_login.state.state_tag
-println (&quot;...value extracted is :&quot;+statetag)
+println (&quot;**** State Tag is **** :&quot;+newline+&quot;**** &quot;+statetag+&quot; ****&quot;)
 GlobalVariable.state_tag = statetag
-println (&quot;State Tag is :&quot;+GlobalVariable.state_tag)
+println (&quot;**** State Tag is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.state_tag+&quot; ****&quot;)
 
 def playerid = result_login.state.player_id
-println (&quot;...value extracted is :&quot;+playerid)
+println (&quot;**** Player ID is **** :&quot;+newline+&quot;**** &quot;+playerid+&quot; ****&quot;)
 GlobalVariable.player_id = playerid
-println (&quot;Player ID is :&quot;+GlobalVariable.player_id)
+println (&quot;**** Player ID is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.player_id+&quot; ****&quot;)
 
 def partner_code = result_login.state.partner_code
-println (&quot;...value extracted is :&quot;+partner_code)
+println (&quot;**** Partner Code is **** :&quot;+newline+&quot;**** &quot;+partner_code+&quot; ****&quot;)
 GlobalVariable.partner_code = partner_code
-println (&quot;Partner Code is :&quot;+GlobalVariable.partner_code)
+println (&quot;**** Partner Code is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.partner_code+&quot; ****&quot;)
 
 if (features != null) {
 	// Feature Triggered
 	def features_type = result_login.state.features[0].type
-	println (&quot;...value extracted is :&quot;+features_type)
+	println (&quot;**** Feature Type is **** :&quot;+newline+&quot;**** &quot;+features_type+&quot; ****&quot;)
 	GlobalVariable.features_type = features_type
+	println (&quot;**** Feature Type is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.features_type+&quot; ****&quot;)
 	
 	if (&quot;PICK&quot;.equals(features_type)) {
 		// Feature Type Is Pick
 		def free_spin_pick = result_login.state.features[0].complete
-		println (&quot;...value extracted is :&quot;+free_spin_pick)
+		println (&quot;**** Pick Complete is **** :&quot;+newline+&quot;**** &quot;+free_spin_pick+&quot; ****&quot;)
 		GlobalVariable.free_spin_pick = free_spin_pick
-		println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_pick)
+		println (&quot;**** Pick Complete is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_pick+&quot; ****&quot;)
 
 				if (free_spin_pick == true) {
 					// Free Spin Picked
 					def free_spin_complete = result_login.state.features[1].complete
-					println (&quot;...value extracted is :&quot;+free_spin_complete)
+					println (&quot;**** Free Spin Complete is **** :&quot;+newline+&quot;**** &quot;+free_spin_complete+&quot; ****&quot;)
 					GlobalVariable.free_spin_complete = free_spin_complete
-					println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_complete)
+					println (&quot;**** Free Spin Complete is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_complete+&quot; ****&quot;)
 				
 					def free_spin_left = result_login.state.features[1].feature_state.free_spins_left
-					println (&quot;...value extracted is :&quot;+free_spin_left)
+					println (&quot;**** Free Spin Left is **** :&quot;+newline+&quot;**** &quot;+free_spin_left+&quot; ****&quot;)
 					GlobalVariable.free_spin_left = free_spin_left
-					println (&quot;Free Spin Left is :&quot;+GlobalVariable.free_spin_left)
+					println (&quot;**** Free Spin Left is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_left+&quot; ****&quot;)
 			}
 	}
 	else if (&quot;FREE_SPIN&quot;.equals(features_type)) {
 		// Feature Type Is FREE_SPIN
 		def free_spin_complete = result_login.state.features[0].complete
-		println (&quot;...value extracted is :&quot;+free_spin_complete)
+		println (&quot;**** Free Spin Complete is **** :&quot;+newline+&quot;**** &quot;+free_spin_complete+&quot; ****&quot;)
 		GlobalVariable.free_spin_complete = free_spin_complete
-		println (&quot;Pick complete is :&quot;+GlobalVariable.free_spin_complete)
+		println (&quot;**** Free Spin Complete is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_complete+&quot; ****&quot;)
 	
 		def free_spin_left = result_login.state.features[0].feature_state.free_spins_left
-		println (&quot;...value extracted is :&quot;+free_spin_left)
+		println (&quot;**** Free Spin Left is **** :&quot;+newline+&quot;**** &quot;+free_spin_left+&quot; ****&quot;)
 		GlobalVariable.free_spin_left = free_spin_left
-		println (&quot;Free Spin Left is :&quot;+GlobalVariable.free_spin_left)
+		println (&quot;**** Free Spin Left is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_left+&quot; ****&quot;)
 	}
 }</verificationScript>
    <wsdlAddress></wsdlAddress>

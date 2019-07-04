@@ -18,7 +18,7 @@ WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url') : 'k
 
 WS.sendRequestAndVerify(findTestObject('NuRGS/Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner, ('game_code') : Game_Code]))
 
-for (int i = 1; i <= 20; i++) {
+for (int i = 1; i <= 100; i++) {
 	def features = GlobalVariable.features
 	def features_type = GlobalVariable.features_type
 	def free_spin_pick = GlobalVariable.free_spin_pick
@@ -39,10 +39,8 @@ for (int i = 1; i <= 20; i++) {
 		// Feature Triggered And Type Is "FREE_SPIN" And Not Complete
 		println('**** In Test Case - Feature is ****'+newline+features)
 		println('**** In Test Case - Complete = **** '+newline+free_spin_complete)
-		spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_FreeSpin', [('player_id') : GlobalVariable.player_id
-					, ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
-					, ('state_tag') : GlobalVariable.state_tag, ('game_code') : Game_Code]))
 		println('**** In Test Case - Free Spin Left **** = '+newline+GlobalVariable.free_spin_left)
+		break;
 	}
 
 	else if ((features != null) && ('FREE_SPIN'.equals(features_type) && (free_spin_complete == true))) {
@@ -73,10 +71,8 @@ for (int i = 1; i <= 20; i++) {
 
 			if (free_spin_complete != true) {
 				// Free Spin Not Complete
-				spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_FreeSpin', [('player_id') : GlobalVariable.player_id
-							, ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
-							, ('state_tag') : GlobalVariable.state_tag, ('game_code') : Game_Code]))
 				println('**** In Test Case - Free Spin Left is ****'+newline+GlobalVariable.free_spin_left)
+				break;
 			}
 			
 			else if (free_spin_complete == true) {

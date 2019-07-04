@@ -88,13 +88,14 @@ WS.verifyResponseStatusCode(response, 200)
 assertThat(response.getStatusCode()).isEqualTo(200)
 assertThat(response.getResponseText()).contains('session_token')
 
+String newline = System.getProperty(&quot;line.separator&quot;)
 def getsession = new groovy.json.JsonSlurper()
 def result_getsession = getsession.parseText(response.getResponseBodyContent())
 
 def session_token = result_getsession.session_token
-println (&quot;...value extracted is :&quot;+session_token)
+println (&quot;**** Session Token is **** :&quot;+newline+&quot;**** &quot;+session_token+&quot; ****&quot;)
 
 GlobalVariable.session_token = session_token
-println (&quot;Session Token is :&quot;+GlobalVariable.session_token)</verificationScript>
+println (&quot;**** Session Token is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.session_token+&quot; ****&quot;)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
