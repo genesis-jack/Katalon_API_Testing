@@ -58,13 +58,13 @@
       <name>state_tag</name>
    </variables>
    <variables>
-      <defaultValue>findTestData('Game_Data').getValue(4, 1)</defaultValue>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(4, 1)</defaultValue>
       <description></description>
       <id>95e6890f-4cd3-4ca0-ab30-6d5506d2c5d1</id>
       <masked>false</masked>
       <name>game_code</name>
    </variables>
-   <verificationScript>// Free SPIN
+   <verificationScript>// FREE SPIN
 import static org.assertj.core.api.Assertions.*
 import com.kms.katalon.core.testobject.RequestObject
 import com.kms.katalon.core.testobject.ResponseObject
@@ -86,56 +86,103 @@ def spin = new groovy.json.JsonSlurper()
 def result_spin = spin.parseText(response.getResponseBodyContent())
 
 def rgssessiontoken = result_spin.session_token
-println (&quot;**** RGS Session Token is **** :&quot;+newline+&quot;**** &quot;+rgssessiontoken+&quot; ****&quot;)
+// println (&quot;**** RGS Session Token is **** :&quot;+newline+&quot;**** &quot;+rgssessiontoken+&quot; ****&quot;)
 GlobalVariable.rgs_session_token = rgssessiontoken
-println (&quot;**** RGS Session Token is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.rgs_session_token+&quot; ****&quot;)
+// println (&quot;**** RGS Session Token is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.rgs_session_token+&quot; ****&quot;)
 
 def statetag = result_spin.state_tag
-println (&quot;**** State Tag is **** :&quot;+newline+&quot;**** &quot;+statetag+&quot; ****&quot;)
+// println (&quot;**** State Tag is **** :&quot;+newline+&quot;**** &quot;+statetag+&quot; ****&quot;)
 GlobalVariable.state_tag = statetag
-println (&quot;**** State Tag is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.state_tag+&quot; ****&quot;)
+// println (&quot;**** State Tag is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.state_tag+&quot; ****&quot;)
 
 def playerid = result_spin.player_id
-println (&quot;**** Player ID is **** :&quot;+newline+&quot;**** &quot;+playerid+&quot; ****&quot;)
+// println (&quot;**** Player ID is **** :&quot;+newline+&quot;**** &quot;+playerid+&quot; ****&quot;)
 GlobalVariable.player_id = playerid
-println (&quot;**** Player ID is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.player_id+&quot; ****&quot;)
+// println (&quot;**** Player ID is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.player_id+&quot; ****&quot;)
 
 def features = result_spin.features
-println (&quot;**** Features is **** :&quot;+newline+&quot;**** &quot;+features+&quot; ****&quot;)
+// println (&quot;**** Features is **** :&quot;+newline+&quot;**** &quot;+features+&quot; ****&quot;)
 GlobalVariable.features = features
-println (&quot;**** Features is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.features+&quot; ****&quot;)
+// println (&quot;**** Features is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.features+&quot; ****&quot;)
+
+def balance = result_spin.balance
+// println (&quot;**** Balance is **** :&quot;+newline+&quot;**** &quot;+balance+&quot; ****&quot;)
+GlobalVariable.balance = balance
+// println (&quot;**** Balance is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.balance+&quot; ****&quot;)
+
+def round_id = result_spin.round_id
+GlobalVariable.round_id = round_id
+def currency = result_spin.currency
+GlobalVariable.currency = currency
+def fraction = result_spin.fraction
+GlobalVariable.fraction = fraction
+def partner_code = result_spin.partner_code
+GlobalVariable.partner_code = partner_code
+def player_id = result_spin.player_id
+GlobalVariable.player_id = player_id
+def game_code = result_spin.game_code
+GlobalVariable.game_code = game_code
+def provider = result_spin.provider
+GlobalVariable.provider = provider
+def round_win = result_spin.round_win
+GlobalVariable.round_win = round_win
+def feature_win = result_spin.feature_win
+GlobalVariable.feature_win = feature_win
+def scatter_win = result_spin.scatter_win
+GlobalVariable.scatter_win = scatter_win
+def bet_amount = result_spin.bet_amount
+GlobalVariable.bet_amount = bet_amount
+def bet_value = result_spin.bet_value
+GlobalVariable.bet_value = bet_value
+def lines = result_spin.lines
+GlobalVariable.lines = lines
+def bet_per_line = result_spin.bet_per_line
+GlobalVariable.bet_per_line = bet_per_line
+def causality = result_spin.spin_result.causality
+GlobalVariable.causality = causality
+def reels = result_spin.spin_result.reels
+GlobalVariable.reels = reels
+def reel_wins = result_spin.spin_result.reel_wins
+GlobalVariable.reel_wins = reel_wins
+def spin_result_scatter_win = result_spin.spin_result.scatter_win
+GlobalVariable.spin_result_scatter_win = spin_result_scatter_win
+def win_amount = result_spin.spin_result.win_amount
+GlobalVariable.win_amount = win_amount
+def engagements = result_spin.engagements
+GlobalVariable.engagements = engagements
+def features_triggered = result_spin.spin_result.features_triggered
+GlobalVariable.features_triggered = features_triggered
 
 if (features != null) {
 	// Features Triggered
 	def features_type = result_spin.features[0].type
-	println (&quot;**** Features is **** :&quot;+newline+&quot;**** &quot;+features+&quot; ****&quot;)
 	GlobalVariable.features_type = features_type
-	println (&quot;**** Features is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.features_type+&quot; ****&quot;)
+	// println (&quot;**** Features is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.features_type+&quot; ****&quot;)
 
 	if ('PICK'.equals(features_type)) {
 		// Features Is PICK
 		def free_spin_pick = result_spin.features[0].complete
 		GlobalVariable.free_spin_pick = free_spin_pick
-		println (&quot;**** Free Spin Pick is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_pick+&quot; ****&quot;)
+		// println (&quot;**** Free Spin Pick is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_pick+&quot; ****&quot;)
 
 		if (free_spin_pick == true) {
 			// Free Spin Picked
 			def free_spin_complete = result_spin.features[1].complete
 			GlobalVariable.free_spin_complete = free_spin_complete
-			println (&quot;**** Free Spin Complete is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_complete+&quot; ****&quot;)
+			// println (&quot;**** Free Spin Complete is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_complete+&quot; ****&quot;)
 			def free_spin_left = result_spin.features[1].feature_state.free_spins_left
 			GlobalVariable.free_spin_left = free_spin_left
-			println (&quot;**** Free Spin Left is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_left+&quot; ****&quot;)
+			// println (&quot;**** Free Spin Left is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_left+&quot; ****&quot;)
 		}
 	}
 	else if ('FREE_SPIN'.equals(features_type)) {
 		// Features Is FREE_SPIN
 		def free_spin_complete = result_spin.features[0].complete
 		GlobalVariable.free_spin_complete = free_spin_complete
-		println (&quot;**** Free Spin Complete is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_complete+&quot; ****&quot;)
+		// println (&quot;**** Free Spin Complete is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_complete+&quot; ****&quot;)
 		def free_spin_left = result_spin.features[0].feature_state.free_spins_left
 		GlobalVariable.free_spin_left = free_spin_left
-		println (&quot;**** Free Spin Left is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_left+&quot; ****&quot;)
+		// println (&quot;**** Free Spin Left is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.free_spin_left+&quot; ****&quot;)
 	}
 }</verificationScript>
    <wsdlAddress></wsdlAddress>

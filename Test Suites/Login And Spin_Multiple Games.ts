@@ -14,16 +14,7 @@
       <guid>db86cbc0-429f-4c70-ab53-cd30dca17fdb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Login and Spin - Master</testCaseId>
-      <testDataLink>
-         <combinationType>ONE</combinationType>
-         <id>f01e0d84-961a-4df5-ab41-ec98d840b1a9</id>
-         <iterationEntity>
-            <iterationType>ALL</iterationType>
-            <value></value>
-         </iterationEntity>
-         <testDataId>Data Files/Test_Account</testDataId>
-      </testDataLink>
+      <testCaseId>Test Cases/01_NuRGS/Login and Spin-Master</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>04efc8af-7f4c-4cc3-bcdc-5a77e27bac01</id>
@@ -31,16 +22,7 @@
             <iterationType>ALL</iterationType>
             <value></value>
          </iterationEntity>
-         <testDataId>Data Files/Partner_Data</testDataId>
-      </testDataLink>
-      <testDataLink>
-         <combinationType>ONE</combinationType>
-         <id>4aad2133-8e06-4593-a680-cf9a84eecb4b</id>
-         <iterationEntity>
-            <iterationType>ALL</iterationType>
-            <value></value>
-         </iterationEntity>
-         <testDataId>Data Files/Game_Data</testDataId>
+         <testDataId>Data Files/NG Game Release Acceptance Test</testDataId>
       </testDataLink>
       <variableLink>
          <testDataLinkId>04efc8af-7f4c-4cc3-bcdc-5a77e27bac01</testDataLinkId>
@@ -55,13 +37,13 @@
          <variableId>f7315c63-8670-4118-9471-88e4c751c84d</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>f01e0d84-961a-4df5-ab41-ec98d840b1a9</testDataLinkId>
+         <testDataLinkId>04efc8af-7f4c-4cc3-bcdc-5a77e27bac01</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>Player ID</value>
          <variableId>b80b268b-f870-4c81-bd1d-8c456ec552c8</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>4aad2133-8e06-4593-a680-cf9a84eecb4b</testDataLinkId>
+         <testDataLinkId>04efc8af-7f4c-4cc3-bcdc-5a77e27bac01</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>Game Code</value>
          <variableId>0776553d-951e-4b46-bd56-3dacb529681c</variableId>

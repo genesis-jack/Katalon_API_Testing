@@ -14,7 +14,7 @@
       <guid>5db5c4e8-b2bf-4566-95ae-3648ea07ef54</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/Check Bet Increment</testCaseId>
+      <testCaseId>Test Cases/03_Platform/Check Bet Increment</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>904a4900-0b13-4acb-9e3c-6103464018fe</id>

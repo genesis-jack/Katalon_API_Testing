@@ -9,7 +9,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;player_id\&quot;: \&quot;1571102\&quot;,\n    \&quot;session_token\&quot;: \&quot;1aaa3424-8318-4912-bbac-9b91bae82e1e\&quot;,\n    \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n    \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n    \&quot;action\&quot;: \&quot;FREE_SPIN\&quot;,\n    \&quot;state_tag\&quot;: \&quot;F6F245D5\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;player_id\&quot;: \&quot;1571102\&quot;,\n    \&quot;session_token\&quot;: \&quot;1aaa3424-8318-4912-bbac-9b91bae82e1e\&quot;,\n    \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n    \&quot;game_code\&quot;: \&quot;${game_code}\&quot;,\n    \&quot;action\&quot;: \&quot;FREE_SPIN\&quot;,\n    \&quot;state_tag\&quot;: \&quot;F6F245D5\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -23,7 +23,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://nurgs.star9ad.com/ng/take-turn/?</restUrl>
+   <restUrl>https://nurgs.star9ad.com/ng/take-turn/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -56,6 +56,13 @@
       <id>81775165-c804-481b-873f-5ed32c2334d0</id>
       <masked>false</masked>
       <name>state_tag</name>
+   </variables>
+   <variables>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(4, 1)</defaultValue>
+      <description></description>
+      <id>a2e99ffb-085c-4adf-b425-93564a31c3b8</id>
+      <masked>false</masked>
+      <name>game_code</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

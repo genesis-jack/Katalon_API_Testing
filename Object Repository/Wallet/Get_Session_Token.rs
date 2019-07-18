@@ -47,21 +47,21 @@
       <name>url</name>
    </variables>
    <variables>
-      <defaultValue>findTestData('Partner_Data').getValue(2, 1)</defaultValue>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(2, 1)</defaultValue>
       <description></description>
       <id>f6c5ad29-4d99-41d2-b17e-a8fdfb1fdd64</id>
       <masked>false</masked>
       <name>partner</name>
    </variables>
    <variables>
-      <defaultValue>findTestData('Partner_Data').getValue(3, 1)</defaultValue>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(3, 1)</defaultValue>
       <description></description>
       <id>fddf52b3-f2fb-4c1e-9b9a-d102c8badab7</id>
       <masked>false</masked>
       <name>secretkey</name>
    </variables>
    <variables>
-      <defaultValue>findTestData('Test_Account').getValue(5, 1)</defaultValue>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(5, 1)</defaultValue>
       <description></description>
       <id>4673a9c8-2fd2-483b-962b-61d307e48dab</id>
       <masked>false</masked>
@@ -91,11 +91,17 @@ assertThat(response.getResponseText()).contains('session_token')
 String newline = System.getProperty(&quot;line.separator&quot;)
 def getsession = new groovy.json.JsonSlurper()
 def result_getsession = getsession.parseText(response.getResponseBodyContent())
+result = response.getResponseBodyContent()
+println(result)
 
 def session_token = result_getsession.session_token
 println (&quot;**** Session Token is **** :&quot;+newline+&quot;**** &quot;+session_token+&quot; ****&quot;)
-
 GlobalVariable.session_token = session_token
-println (&quot;**** Session Token is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.session_token+&quot; ****&quot;)</verificationScript>
+println (&quot;**** Session Token is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.session_token+&quot; ****&quot;)
+
+def wallet_balance = result_getsession.internal_balance
+println (&quot;**** Wallet Balance is **** :&quot;+newline+&quot;**** &quot;+wallet_balance+&quot; ****&quot;)
+GlobalVariable.wallet_balance = wallet_balance
+println (&quot;**** Wallet Balance is **** :&quot;+newline+&quot;**** &quot;+GlobalVariable.wallet_balance+&quot; ****&quot;)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

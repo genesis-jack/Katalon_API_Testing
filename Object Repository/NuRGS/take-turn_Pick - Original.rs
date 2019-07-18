@@ -9,7 +9,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n   \&quot;player_id\&quot;: \&quot;1571102\&quot;,\n   \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n   \&quot;choice_id\&quot;: \&quot;FS_20\&quot;,\n   \&quot;game_code\&quot;: \&quot;NG-0063\&quot;,\n   \&quot;action\&quot;: \&quot;PICK\&quot;,\n   \&quot;session_token\&quot;: \&quot;ef4614bc-a782-4a70-aee8-7e0f5323e763\&quot;,\n   \&quot;state_tag\&quot;:\&quot;2E547523\&quot;,\n   \&quot;bet_denom_index\&quot;: 1\n}&quot;,
+  &quot;text&quot;: &quot;{\n   \&quot;player_id\&quot;: \&quot;1571102\&quot;,\n   \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n   \&quot;choice_id\&quot;: \&quot;FS_20\&quot;,\n   \&quot;game_code\&quot;: \&quot;${game_code}\&quot;,\n   \&quot;action\&quot;: \&quot;PICK\&quot;,\n   \&quot;session_token\&quot;: \&quot;ef4614bc-a782-4a70-aee8-7e0f5323e763\&quot;,\n   \&quot;state_tag\&quot;:\&quot;2E547523\&quot;,\n   \&quot;bet_denom_index\&quot;: 1\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -23,7 +23,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://nurgs.star9ad.com/ng/take-turn/?</restUrl>
+   <restUrl>https://nurgs.star9ad.com/ng/take-turn/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -56,6 +56,13 @@
       <id>81775165-c804-481b-873f-5ed32c2334d0</id>
       <masked>false</masked>
       <name>state_tag</name>
+   </variables>
+   <variables>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(4, 1)</defaultValue>
+      <description></description>
+      <id>ac6ff74a-95b6-4de5-890e-aea8f5360944</id>
+      <masked>false</masked>
+      <name>game_code</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
