@@ -40,7 +40,7 @@ WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url') : 'k
 WS.sendRequestAndVerify(findTestObject('NuRGS/Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner
 			, ('game_code') : Game_Code]))
 
-for (int i = 0; i <= 2; i++) {
+for (int i = 0; i <= 20; i++) {
 	def features = GlobalVariable.features
 
 	def features_type = GlobalVariable.features_type
@@ -118,7 +118,7 @@ for (int i = 0; i <= 2; i++) {
 	// Compare Login and Spin Data
 	WebUI.callTestCase(findTestCase('00_Excel/Compare Data-Login vs Spin'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 	// Query Spin Data By rgs-history API
-	WebUI.callTestCase(findTestCase('01_NuRGS/RGS-History'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+	WebUI.callTestCase(findTestCase('01_NuRGS/RGS History'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 	// Write rgs-history Response To Excel
 	WebUI.callTestCase(findTestCase('00_Excel/Data to Excel-RGS_History'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 	// Query Spin Data By PTH API

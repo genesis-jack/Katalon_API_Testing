@@ -33,18 +33,18 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://${url}/m4/wallet/balance/${player_id}</restUrl>
+   <restUrl>https://krug-gw-colo.${env}.com/m4/wallet/balance/${player_id}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>'krug-gw-colo.star9ad.com'</defaultValue>
+      <defaultValue>'3655oule'</defaultValue>
       <description></description>
       <id>5d243f24-169e-4a0c-b172-7c0f24ad8425</id>
       <masked>false</masked>
-      <name>url</name>
+      <name>env</name>
    </variables>
    <variables>
       <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(2, 1)</defaultValue>

@@ -9,7 +9,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n  \&quot;login_properties\&quot;: [\n    {\n      \&quot;name\&quot;: \&quot;session_token\&quot;,\n      \&quot;value\&quot;: \&quot;fddb6426b250bd918c36129365ba2a5d\&quot;\n    },\n    {\n      \&quot;name\&quot;: \&quot;game_id\&quot;,\n      \&quot;value\&quot;: \&quot;M4-0008\&quot;\n    }\n  ]\n}&quot;,
+  &quot;text&quot;: &quot;{\n  \&quot;login_properties\&quot;: [\n    {\n      \&quot;name\&quot;: \&quot;session_token\&quot;,\n      \&quot;value\&quot;: \&quot;4f86b2eacb0001e3da1b4b4f3864831a\&quot;\n    },\n    {\n      \&quot;name\&quot;: \&quot;game_id\&quot;,\n      \&quot;value\&quot;: \&quot;M4-0012\&quot;\n    }\n  ]\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -30,7 +30,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://${partner}.star88ad.com/m4/gameservice/login/</restUrl>
+   <restUrl>https://${partner}.${env}.com/m4/gameservice/login/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -42,6 +42,13 @@
       <id>7bf2329c-6382-46c0-9cb9-65d21393e4ab</id>
       <masked>false</masked>
       <name>partner</name>
+   </variables>
+   <variables>
+      <defaultValue>'3655oule'</defaultValue>
+      <description></description>
+      <id>e54373b9-7d96-45c5-8e34-16088d02ff2c</id>
+      <masked>false</masked>
+      <name>env</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

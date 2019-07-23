@@ -30,7 +30,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://${partner}.star88ad.com/m4/gameservice/login/</restUrl>
+   <restUrl>https://${partner}.${env}.com/m4/gameservice/login/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -51,11 +51,18 @@
       <name>session_token</name>
    </variables>
    <variables>
-      <defaultValue>'M4-0008'</defaultValue>
+      <defaultValue>'M4-0012'</defaultValue>
       <description></description>
       <id>8fc92470-cfc3-453a-98e2-f970bb703d0b</id>
       <masked>false</masked>
       <name>game_code</name>
+   </variables>
+   <variables>
+      <defaultValue>'3655oule'</defaultValue>
+      <description></description>
+      <id>6a64529c-90ff-4aef-8717-d5aff48f48c2</id>
+      <masked>false</masked>
+      <name>env</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
@@ -80,8 +87,8 @@ def login = new groovy.json.JsonSlurper()
 def result_login = login.parseText(response.getResponseBodyContent())
 
 def user_id = result_login.user_id
-println (&quot;...value extracted is :&quot;+user_id)
-GlobalVariable.user_id = user_id
-println (&quot;User ID Is :&quot;+GlobalVariable.user_id)</verificationScript>
+//println (&quot;...value extracted is :&quot;+user_id)
+GlobalVariable.m4_user_id = user_id
+//println (&quot;User ID Is :&quot;+GlobalVariable.m4_user_id)</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

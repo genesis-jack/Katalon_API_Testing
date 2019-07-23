@@ -37,7 +37,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://${partner}.star88ad.com/m4/gameservice/init/RICH_PANDA_M4_RECORDER</restUrl>
+   <restUrl>https://${partner}.${env}.com/m4/gameservice/init/${gameId}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -51,11 +51,25 @@
       <name>partner</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.user_id</defaultValue>
+      <defaultValue>GlobalVariable.m4_user_id</defaultValue>
       <description></description>
       <id>ea2cacc3-23cd-43f5-9bd1-620ed4d79c4f</id>
       <masked>false</masked>
       <name>user_id</name>
+   </variables>
+   <variables>
+      <defaultValue>'SW_M4_V1_RECORDER'</defaultValue>
+      <description></description>
+      <id>d36de92f-6456-4858-8b97-73531a3033b1</id>
+      <masked>false</masked>
+      <name>gameId</name>
+   </variables>
+   <variables>
+      <defaultValue>'3655oule'</defaultValue>
+      <description></description>
+      <id>d38557e0-c61e-44df-8198-78ece77a9e84</id>
+      <masked>false</masked>
+      <name>env</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
