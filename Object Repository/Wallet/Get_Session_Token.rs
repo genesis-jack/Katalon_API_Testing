@@ -33,14 +33,14 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://krug-gw-colo.${env}.com/m4/wallet/balance/${player_id}</restUrl>
+   <restUrl>https://${env}/m4/wallet/balance/${player_id}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>'3655oule'</defaultValue>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
       <description></description>
       <id>5d243f24-169e-4a0c-b172-7c0f24ad8425</id>
       <masked>false</masked>

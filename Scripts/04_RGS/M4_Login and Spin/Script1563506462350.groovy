@@ -16,7 +16,6 @@ import internal.GlobalVariable as GlobalVariable
 WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('env') : '3655oule', ('partner') : Partner, ('secretkey') : Secret_Key, ('player_id') : Player_ID]))
 WS.sendRequestAndVerify(findTestObject('RGS/M4_Login', [('env') : '3655oule', ('session_token') : GlobalVariable.session_token, ('partner') : Partner, ('game_code') : 'M4-0012']))
 
-
 for (int i = 0; i <= 100;i++) {
 	WS.sendRequestAndVerify(findTestObject('RGS/M4_Init', [('env') : '3655oule', ('partner') : Partner, ('user_id') : GlobalVariable.m4_user_id, ('gameId') : 'SW_M4_V1_RECORDER']))
 	WS.sendRequestAndVerify(findTestObject('RGS/M4_Spin', [('env') : '3655oule', ('partner') : Partner, ('user_id') : GlobalVariable.m4_user_id
@@ -26,3 +25,5 @@ for (int i = 0; i <= 100;i++) {
 	if ((GlobalVariable.symbo_counter[0] >= 1) && (GlobalVariable.symbo_counter[1] >= 1) && (GlobalVariable.symbo_counter[2] >= 1))
 	break;
 }
+spin_result = groovy.json.JsonOutput.toJson(GlobalVariable.spin_result)
+println(spin_result)

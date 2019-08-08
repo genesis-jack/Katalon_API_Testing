@@ -65,7 +65,7 @@
       <name>rgs_session_token</name>
    </variables>
    <variables>
-      <defaultValue>'3655oule'</defaultValue>
+      <defaultValue>findTestData('Environment').getValue(2, 1)</defaultValue>
       <description></description>
       <id>6d58dc42-aac9-4b2c-8960-3888c94f6e46</id>
       <masked>false</masked>
@@ -96,6 +96,7 @@ assertThat(response.getStatusCode()).isEqualTo(200)
 
 def spin = new groovy.json.JsonSlurper()
 def result_spin = spin.parseText(response.getResponseBodyContent())
+GlobalVariable.spin_result = result_spin
 String newline = System.getProperty(&quot;line.separator&quot;)
 
 def current_balance = result_spin.current_balance

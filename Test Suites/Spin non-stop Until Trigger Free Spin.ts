@@ -48,5 +48,17 @@
          <value>Game Code</value>
          <variableId>9188dde3-76a9-473b-a56a-fb1b616c5981</variableId>
       </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>adfd31d1-1a9c-4e3d-817f-95c6318c36ec</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>a5fa417f-d68d-42bd-abf2-0bc1c3634184</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

@@ -34,10 +34,10 @@ ExcelKeywords.createExcelSheets(workbook01, ['login', 'take_turn', 'rgs_detail',
 
 ExcelKeywords.saveWorkbook(excelFile01, workbook01)
 
-WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url') : 'krug-gw-colo.star9ad.com', ('partner') : Partner
+WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('env') : Env_krug_gw, ('partner') : Partner
 			, ('secretkey') : Secret_Key, ('player_id') : Player_ID]))
 
-WS.sendRequestAndVerify(findTestObject('NuRGS/Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner
+WS.sendRequestAndVerify(findTestObject('NuRGS/Login', [('env') : Env_RGS, ('session_token') : GlobalVariable.session_token, ('partner') : Partner
 			, ('game_code') : Game_Code]))
 
 for (int i = 0; i <= 20; i++) {
@@ -57,7 +57,7 @@ for (int i = 0; i <= 20; i++) {
 		// Feature Not Triggered
 		println(('**** In Test Case - Feature is ****' + newline) + features)
 		println(('**** In Test Case - Complete = **** ' + newline) + free_spin_complete)
-		spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_BaseSpin', [('player_id') : GlobalVariable.player_id
+		spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_BaseSpin', [('env') : Env_RGS, ('player_id') : GlobalVariable.player_id
 					, ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
 					, ('state_tag') : GlobalVariable.state_tag, ('game_code') : Game_Code])
 			)
@@ -65,14 +65,14 @@ for (int i = 0; i <= 20; i++) {
 		// Feature Triggered And Type Is "FREE_SPIN" And Not Complete
 		println(('**** In Test Case - Feature is ****' + newline) + features)
 		println(('**** In Test Case - Complete = **** ' + newline) + free_spin_complete)
-		spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_FreeSpin', [('player_id') : GlobalVariable.player_id
+		spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_FreeSpin', [('env') : Env_RGS, ('player_id') : GlobalVariable.player_id
 					, ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
 					, ('state_tag') : GlobalVariable.state_tag, ('game_code') : Game_Code]))
 		println(('**** In Test Case - Free Spin Left **** = ' + newline) + GlobalVariable.free_spin_left)
 	} else if ((features != null) && ('FREE_SPIN'.equals(features_type) && (free_spin_complete == true))) {
 		// Feature Triggered And Type Is "FREE_SPIN" And Complete
 		println(('**** In Test Case - Feature is ****' + newline) + features)
-		spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_BaseSpin', [('player_id') : GlobalVariable.player_id
+		spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_BaseSpin', [('env') : Env_RGS, ('player_id') : GlobalVariable.player_id
 					, ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
 					, ('state_tag') : GlobalVariable.state_tag, ('game_code') : Game_Code]))
 		println(('**** In Test Case - Free Spin Left **** = ' + newline) + GlobalVariable.free_spin_left)
@@ -82,7 +82,7 @@ for (int i = 0; i <= 20; i++) {
 		println(('**** In Test Case - Free Spin Pick is ****' + newline) + free_spin_pick)
 		if (free_spin_pick != true) {
 			// Not Pick Yet
-			spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_Pick', [('player_id') : GlobalVariable.player_id
+			spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_Pick', [('env') : Env_RGS, ('player_id') : GlobalVariable.player_id
 						, ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
 						, ('state_tag') : GlobalVariable.state_tag, ('game_code') : Game_Code]))
 		} else if (free_spin_pick == true) {
@@ -91,7 +91,7 @@ for (int i = 0; i <= 20; i++) {
 			println(('**** In Test Case - Free Spin Pick is ****' + newline) + free_spin_pick)
 			if (free_spin_complete != true) {
 				// Free Spin Not Complete
-				spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_FreeSpin', [('player_id') : GlobalVariable.player_id
+				spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_FreeSpin', [('env') : Env_RGS, ('player_id') : GlobalVariable.player_id
 							, ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
 							, ('state_tag') : GlobalVariable.state_tag, ('game_code') : Game_Code]))
 
@@ -99,17 +99,17 @@ for (int i = 0; i <= 20; i++) {
 			} else if (free_spin_complete == true) {
 				// Free Spin Complete
 				println(('**** In Test Case - Feature is ****' + newline) + features)
-				spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_BaseSpin', [('player_id') : GlobalVariable.player_id
+				spin_result = WS.sendRequestAndVerify(findTestObject('NuRGS/take-turn_BaseSpin', [('env') : Env_RGS, ('player_id') : GlobalVariable.player_id
 							, ('partner_code') : GlobalVariable.partner_code, ('rgs_session_token') : GlobalVariable.rgs_session_token
 							, ('state_tag') : GlobalVariable.state_tag, ('game_code') : Game_Code]))
 			}
 		}
 	}
 	
-	WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('url') : 'krug-gw-colo.star9ad.com', ('partner') : Partner
+	WS.sendRequestAndVerify(findTestObject('Wallet/Get_Session_Token', [('env') : Env_krug_gw, ('partner') : Partner
 				, ('secretkey') : Secret_Key, ('player_id') : Player_ID]))
 
-	WS.sendRequestAndVerify(findTestObject('NuRGS/Login', [('session_token') : GlobalVariable.session_token, ('partner') : Partner
+	WS.sendRequestAndVerify(findTestObject('NuRGS/Login', [('env') : Env_RGS, ('session_token') : GlobalVariable.session_token, ('partner') : Partner
 				, ('game_code') : Game_Code]))
 
 	GlobalVariable.excel_col = (i + 1)

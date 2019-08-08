@@ -23,7 +23,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://nurgs.star9ad.com/ng/take-turn/</restUrl>
+   <restUrl>https://nurgs.${env}.com/ng/take-turn/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -70,6 +70,13 @@
       <id>5d21c848-392d-4b9e-9c54-1758dea353c8</id>
       <masked>false</masked>
       <name>balance</name>
+   </variables>
+   <variables>
+      <defaultValue>'3655oule'</defaultValue>
+      <description></description>
+      <id>b6e60b5a-d3e7-4071-b889-99bce18e61f4</id>
+      <masked>false</masked>
+      <name>env</name>
    </variables>
    <verificationScript>// BASE SPIN
 import static org.assertj.core.api.Assertions.*

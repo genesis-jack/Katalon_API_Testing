@@ -23,7 +23,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://nurgs.star9ad.com/ng/take-turn/</restUrl>
+   <restUrl>https://nurgs.${env}.com/ng/take-turn/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -63,6 +63,13 @@
       <id>55370c75-0501-420b-91f0-803170dba38f</id>
       <masked>false</masked>
       <name>game_code</name>
+   </variables>
+   <variables>
+      <defaultValue>'3655oule'</defaultValue>
+      <description></description>
+      <id>8bb7215c-fb38-4bcc-9ab6-b3d6de56a7cc</id>
+      <masked>false</masked>
+      <name>env</name>
    </variables>
    <verificationScript>// PICK
 import static org.assertj.core.api.Assertions.*

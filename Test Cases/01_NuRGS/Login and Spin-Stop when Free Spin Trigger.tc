@@ -33,4 +33,18 @@
       <masked>false</masked>
       <name>Game_Code</name>
    </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(3, 2)</defaultValue>
+      <description></description>
+      <id>adfd31d1-1a9c-4e3d-817f-95c6318c36ec</id>
+      <masked>false</masked>
+      <name>Env_RGS</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
+      <description></description>
+      <id>a5fa417f-d68d-42bd-abf2-0bc1c3634184</id>
+      <masked>false</masked>
+      <name>Env_krug_gw</name>
+   </variable>
 </TestCaseEntity>

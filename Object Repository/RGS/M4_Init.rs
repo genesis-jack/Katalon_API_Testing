@@ -65,7 +65,7 @@
       <name>gameId</name>
    </variables>
    <variables>
-      <defaultValue>'3655oule'</defaultValue>
+      <defaultValue>findTestData('Environment').getValue(1, 2)</defaultValue>
       <description></description>
       <id>d38557e0-c61e-44df-8198-78ece77a9e84</id>
       <masked>false</masked>

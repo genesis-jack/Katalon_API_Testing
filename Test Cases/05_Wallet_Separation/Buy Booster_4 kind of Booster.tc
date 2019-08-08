@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Buy Booster_4 kind of Booster</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d5548374-9d2b-4b54-a2b2-51044afca1d7</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>8c2d97de-4a68-4c9d-847b-92040cd35517</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(1, 1)</defaultValue>
+      <description></description>
+      <id>415d663e-afd2-4348-a653-1042e705976e</id>
+      <masked>false</masked>
+      <name>Partner_Code</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>56f16814-ebb7-4303-ae73-7d80a31a8466</id>
+      <masked>false</masked>
+      <name>Secret_Key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>fa782ae9-bbab-40d0-bd64-ff82b405d867</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
+      <description></description>
+      <id>da2df1f5-7fd3-40e6-bd24-99e67d348c0d</id>
+      <masked>false</masked>
+      <name>Env_krug_gw</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(3, 2)</defaultValue>
+      <description></description>
+      <id>a8dfecec-a895-4e31-bd23-6a619dde69fe</id>
+      <masked>false</masked>
+      <name>Env_RGS</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(4, 1)</defaultValue>
+      <description></description>
+      <id>11c5700d-2d19-47b6-a119-43b6222fde1a</id>
+      <masked>false</masked>
+      <name>Game_Code</name>
+   </variable>
+</TestCaseEntity>

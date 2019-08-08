@@ -719,4 +719,14 @@
       <initValue>[]</initValue>
       <name>symbo_counter</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[]</initValue>
+      <name>spin_result</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>bo_accessToken</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

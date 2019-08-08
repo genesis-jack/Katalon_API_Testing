@@ -23,7 +23,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://nurgs.star9ad.com/ng/sessions/</restUrl>
+   <restUrl>https://nurgs.${env}.com/ng/sessions/</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -49,6 +49,13 @@
       <id>469e4f86-9bbc-404c-b32b-4922e3199538</id>
       <masked>false</masked>
       <name>partner</name>
+   </variables>
+   <variables>
+      <defaultValue>'star9ad'</defaultValue>
+      <description></description>
+      <id>7957b574-811c-401a-914e-b121d9fc7279</id>
+      <masked>false</masked>
+      <name>env</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 import com.kms.katalon.core.testobject.RequestObject
@@ -125,22 +132,31 @@ def login_lines = result_login.state.lines
 GlobalVariable.login_lines = login_lines
 def login_bet_per_line = result_login.state.bet_per_line
 GlobalVariable.login_bet_per_line = login_bet_per_line
-def login_causality = result_login.state.spin_result.causality
-GlobalVariable.login_causality = login_causality
-def login_reels = result_login.state.spin_result.reels
-GlobalVariable.login_reels = login_reels
-def login_reel_wins = result_login.state.spin_result.reel_wins
-GlobalVariable.login_reel_wins = login_reel_wins
-def login_result_scatter_win = result_login.state.spin_result.scatter_win
-GlobalVariable.login_result_scatter_win = login_result_scatter_win
-def login_features_triggered = result_login.state.spin_result.features_triggered
-GlobalVariable.login_features_triggered = login_features_triggered
-def login_win_amount = result_login.state.spin_result.win_amount
-GlobalVariable.login_win_amount = login_win_amount
+
 def login_engagements = result_login.state.engagements
 GlobalVariable.login_engagements = login_engagements
-def bet_prefer_bet_per_line = result_login.state.bet_preference.bet_per_line
-GlobalVariable.bet_prefer_bet_per_line = bet_prefer_bet_per_line
+
+def bet_preference = result_login.state.bet_preference
+if (bet_preference != null) {
+	def bet_prefer_bet_per_line = result_login.state.bet_preference.bet_per_line
+	GlobalVariable.bet_prefer_bet_per_line = bet_prefer_bet_per_line
+}
+
+def spin_result = result_login.state.spin_result
+if (spin_result != null) {
+	def login_causality = result_login.state.spin_result.causality
+	GlobalVariable.login_causality = login_causality
+	def login_reels = result_login.state.spin_result.reels
+	GlobalVariable.login_reels = login_reels
+	def login_reel_wins = result_login.state.spin_result.reel_wins
+	GlobalVariable.login_reel_wins = login_reel_wins
+	def login_result_scatter_win = result_login.state.spin_result.scatter_win
+	GlobalVariable.login_result_scatter_win = login_result_scatter_win
+	def login_features_triggered = result_login.state.spin_result.features_triggered
+	GlobalVariable.login_features_triggered = login_features_triggered
+	def login_win_amount = result_login.state.spin_result.win_amount
+	GlobalVariable.login_win_amount = login_win_amount
+}
 
 
 if (features != null) {
