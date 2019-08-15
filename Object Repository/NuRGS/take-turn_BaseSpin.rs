@@ -65,13 +65,6 @@
       <name>game_code</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.balance</defaultValue>
-      <description></description>
-      <id>5d21c848-392d-4b9e-9c54-1758dea353c8</id>
-      <masked>false</masked>
-      <name>balance</name>
-   </variables>
-   <variables>
       <defaultValue>'3655oule'</defaultValue>
       <description></description>
       <id>b6e60b5a-d3e7-4071-b889-99bce18e61f4</id>

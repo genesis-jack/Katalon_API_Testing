@@ -14,7 +14,7 @@
       <guid>db86cbc0-429f-4c70-ab53-cd30dca17fdb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/01_NuRGS/Login and Spin-Master</testCaseId>
+      <testCaseId>Test Cases/_INT/01_NuRGS/Login and Spin-Master</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>04efc8af-7f4c-4cc3-bcdc-5a77e27bac01</id>
@@ -47,6 +47,18 @@
          <type>DATA_COLUMN</type>
          <value>Game Code</value>
          <variableId>0776553d-951e-4b46-bd56-3dacb529681c</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>8717c559-cf57-4e45-a421-97c83ec1745c</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>0df82fd3-406a-4d4a-95cf-547c0fdf837e</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

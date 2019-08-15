@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Add_Rad_Coin</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5ddd1308-1283-4f76-88f4-57694395a7ff</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('Test_Accounts_GT').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>9be500c1-c261-4ce2-8e18-3568d6c2ebaf</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(1, 1)</defaultValue>
+      <description></description>
+      <id>2b9bca6f-865e-494a-a203-54da4f27ab0d</id>
+      <masked>false</masked>
+      <name>PartnerCode</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(4, 2)</defaultValue>
+      <description></description>
+      <id>d7f1a35f-2cad-4b65-892d-2999d1ec5681</id>
+      <masked>false</masked>
+      <name>Env_krug</name>
+   </variable>
+</TestCaseEntity>

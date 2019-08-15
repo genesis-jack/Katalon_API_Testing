@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Login and Check Game State</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4f014103-d590-4135-b076-2ee08c03e45d</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Radi8').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>374c322b-ff37-4a7b-bd48-322cc5e67bd1</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Radi8').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>fef2c43a-94bc-4771-9c0c-210925738f01</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Radi8').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>62805cc4-77fb-4b4d-b2fb-97dd2e2c36aa</id>
+      <masked>false</masked>
+      <name>Secret_Key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Radi8').getValue(4, 1)</defaultValue>
+      <description></description>
+      <id>feeb9baa-e92b-44f4-8357-387b463c9853</id>
+      <masked>false</masked>
+      <name>Game_Code</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
+      <description></description>
+      <id>f1a513ae-5c8f-42fe-96bb-2a2867dced5b</id>
+      <masked>false</masked>
+      <name>Env_krug_gw</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(3, 2)</defaultValue>
+      <description></description>
+      <id>41a001be-cb9e-4cce-ba0f-dacdd45998b8</id>
+      <masked>false</masked>
+      <name>Env_RGS</name>
+   </variable>
+</TestCaseEntity>

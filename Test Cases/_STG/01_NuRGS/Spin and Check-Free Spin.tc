@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Spin and Check-Free Spin</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>237ee3a1-40f4-42d8-adba-acbbb00b4d8b</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>5cc335b6-1e05-4a97-a7b0-1c3c9f7e1297</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>9ea33bbc-d6c3-41dc-ae47-e93b10ccea42</id>
+      <masked>false</masked>
+      <name>Secret_Key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>fcc0750f-ce9e-4a94-a497-80f8841cc68b</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(4, 1)</defaultValue>
+      <description></description>
+      <id>6e65b88c-9b77-423d-9f23-6e9d7e3f1ad0</id>
+      <masked>false</masked>
+      <name>Game_Code</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(3, 2)</defaultValue>
+      <description></description>
+      <id>ba6756d1-268c-42c8-b871-c4ba41826ca1</id>
+      <masked>false</masked>
+      <name>Env_RGS</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
+      <description></description>
+      <id>3d0ede0d-f1dd-4017-bbc8-9698ff7ddf0e</id>
+      <masked>false</masked>
+      <name>Env_krug_gw</name>
+   </variable>
+</TestCaseEntity>

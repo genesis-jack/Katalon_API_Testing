@@ -51,14 +51,14 @@
       <name>partner</name>
    </variables>
    <variables>
-      <defaultValue>'eyJrcnVnX3Nlc3Npb24iOiIyMDFkNDYwYy1hNmEwLTQ5YjctOWNlOS1iMGY1MjI3YjVjY2YiLCJ1c2VyX2lkIjoiODY1ODY2ODAiLCJwYXJ0bmVyX2NvZGUiOiJCQklOIiwiZ2FtZV9rZXkiOiJNNC0wMDEyIiwiY2xpZW50X2lwIjpudWxsLCJtZXJjaGFudF9jb2RlIjoiIiwiZGV2aWNlIjpudWxsLCJjdXJyZW5jeSI6IkNOWSIsImRlbW9fdWlkIjpudWxsLCJwbGF5ZXJfdHlwZSI6IlJFR1VMQVIiLCJiZXRfZGVub21fZGVmYXVsdCI6MH0='</defaultValue>
+      <defaultValue>'eyJrcnVnX3Nlc3Npb24iOiJjOTM2ZmM1YS05YjRiLTRmMTctYjdlOS05ZjdjY2EwOTA3M2IiLCJ1c2VyX2lkIjoiS2F0YWxvbl9QbGF5ZXJfMDAwMSIsInBhcnRuZXJfY29kZSI6IkJCSU4iLCJnYW1lX2tleSI6Ik00LTAwMTIiLCJjbGllbnRfaXAiOm51bGwsIm1lcmNoYW50X2NvZGUiOiIiLCJkZXZpY2UiOm51bGwsImN1cnJlbmN5IjoiQ05ZIiwiZGVtb191aWQiOm51bGwsInBsYXllcl90eXBlIjoiSE9VU0UiLCJiZXRfZGVub21fZGVmYXVsdCI6MH0='</defaultValue>
       <description></description>
       <id>3d78af46-8c57-4f0a-8cbe-30e84e7bbd70</id>
       <masked>false</masked>
       <name>user_id</name>
    </variables>
    <variables>
-      <defaultValue>'3655oule'</defaultValue>
+      <defaultValue>'star9ad'</defaultValue>
       <description></description>
       <id>a5e850eb-f044-47cd-8025-813a7ba9e183</id>
       <masked>false</masked>

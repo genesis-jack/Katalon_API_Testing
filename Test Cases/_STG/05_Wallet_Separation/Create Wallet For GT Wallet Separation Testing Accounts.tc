@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Create Wallet For GT Wallet Separation Testing Accounts</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f627c8a9-2168-4335-aa29-51ca3d62c488</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>7bb0399e-62b0-4d49-ac6f-2b4695d80158</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>9ea93e42-8013-41da-8460-b14d608428e0</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>64423f38-1b6c-4723-9cee-6bf182836a35</id>
+      <masked>false</masked>
+      <name>Secret_Key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(2, 2)</defaultValue>
+      <description></description>
+      <id>5c43f605-4f31-4062-b7b0-d9debc39cf0a</id>
+      <masked>false</masked>
+      <name>Env_Wallet</name>
+   </variable>
+</TestCaseEntity>

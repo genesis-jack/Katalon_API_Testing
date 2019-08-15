@@ -729,4 +729,14 @@
       <initValue>''</initValue>
       <name>bo_accessToken</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>rgs_history_index</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>excel_path</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

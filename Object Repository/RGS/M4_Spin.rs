@@ -9,7 +9,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;channel\&quot;: \&quot;desktop\&quot;,\n    \&quot;bet\&quot;: ${betvalue},\n    \&quot;lines\&quot;: 25,\n    \&quot;multiplier\&quot;: 1,\n    \&quot;currency\&quot;: \&quot;CNY\&quot;,\n    \&quot;points\&quot;: null,\n    \&quot;key\&quot;: null\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;channel\&quot;: \&quot;desktop\&quot;,\n    \&quot;bet\&quot;: 2000,\n    \&quot;lines\&quot;: 25,\n    \&quot;multiplier\&quot;: 1,\n    \&quot;currency\&quot;: \&quot;CNY\&quot;,\n    \&quot;points\&quot;: null,\n    \&quot;key\&quot;: null\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -65,18 +65,11 @@
       <name>rgs_session_token</name>
    </variables>
    <variables>
-      <defaultValue>findTestData('Environment').getValue(2, 1)</defaultValue>
+      <defaultValue>findTestData('Environment').getValue(3, 2)</defaultValue>
       <description></description>
       <id>6d58dc42-aac9-4b2c-8960-3888c94f6e46</id>
       <masked>false</masked>
       <name>env</name>
-   </variables>
-   <variables>
-      <defaultValue>'800'</defaultValue>
-      <description></description>
-      <id>66e11869-db59-40df-a14f-cf016d1779f8</id>
-      <masked>false</masked>
-      <name>betvalue</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 import com.kms.katalon.core.testobject.RequestObject

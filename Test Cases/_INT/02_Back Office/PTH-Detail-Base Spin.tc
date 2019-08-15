@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>PTH-Detail-Base Spin</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>82da1d3b-32c2-4f8c-9dd2-84562b6c4856</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>055d99b8-be9c-4c2d-bd06-5cf4738aaedf</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>9a49bf54-72a4-4b35-8f39-b34778ccf51c</id>
+      <masked>false</masked>
+      <name>Env_krug_gw</name>
+   </variable>
+</TestCaseEntity>

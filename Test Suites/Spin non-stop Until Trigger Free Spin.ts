@@ -14,7 +14,7 @@
       <guid>c5c8d869-c9a1-4416-98f9-23000b8f3e19</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/01_NuRGS/Login and Spin-Stop when Free Spin Trigger</testCaseId>
+      <testCaseId>Test Cases/_INT/01_NuRGS/Login and Spin-Stop when Free Spin Trigger</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>bc95d986-835b-4be1-8522-4d2dfe236cd9</id>

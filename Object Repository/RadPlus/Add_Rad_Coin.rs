@@ -30,7 +30,7 @@
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>findTestData('Test_Accounts_GT').getValue(3, 1)</defaultValue>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(7, 1)</defaultValue>
       <description></description>
       <id>28516df6-f4ab-47d0-8100-8624b6ecfdb7</id>
       <masked>false</masked>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Login and Spin-Master</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>50d3e308-65ac-402d-b10c-38317a551a32</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>f94b2c76-821d-489e-a2da-299e60fa8a83</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>fe5ca433-1760-4c14-8901-7f8f09d5d01a</id>
+      <masked>false</masked>
+      <name>Secret_Key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(7, 1)</defaultValue>
+      <description></description>
+      <id>ad06bdc6-8662-45c1-89a5-617b43baca95</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(4, 1)</defaultValue>
+      <description></description>
+      <id>f4dbd4d2-3ef4-4821-9507-32567c6aec40</id>
+      <masked>false</masked>
+      <name>Game_Code</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(3, 2)</defaultValue>
+      <description></description>
+      <id>0fd71111-faff-4c6e-abb2-98848ccae31f</id>
+      <masked>false</masked>
+      <name>Env_RGS</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
+      <description></description>
+      <id>71e95488-e663-4e70-b89e-372d194c5a99</id>
+      <masked>false</masked>
+      <name>Env_krug_gw</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>RGS History-Base Spin</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>eeafa3ec-d354-40d6-96a1-b780e3764651</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>99c32290-6385-4e27-894e-a4490df616bd</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(3, 2)</defaultValue>
+      <description></description>
+      <id>b2de327d-252b-42bf-b3e8-71d54306fe11</id>
+      <masked>false</masked>
+      <name>Env_RGS</name>
+   </variable>
+</TestCaseEntity>

@@ -26,7 +26,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://krug.star9ad.com/m4/bo/transaction/${transaction_id}</restUrl>
+   <restUrl>https://${env}/m4/bo/transaction/${transaction_id}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -45,6 +45,13 @@
       <id>dcdb8079-5926-4b28-984c-537ade8b5b33</id>
       <masked>false</masked>
       <name>transaction_id</name>
+   </variables>
+   <variables>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
+      <description></description>
+      <id>a22a06f8-70e1-4a6c-b038-4335a8fa4048</id>
+      <masked>false</masked>
+      <name>env</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 import com.kms.katalon.core.testobject.RequestObject

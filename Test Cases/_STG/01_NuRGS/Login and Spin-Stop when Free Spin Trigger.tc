@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Login and Spin-Stop when Free Spin Trigger</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e9385a34-b2ea-4f40-9bae-b5ec04d43458</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>5d6edcfe-6af5-4745-9927-0925413547ce</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>daf6c11d-b22a-40f3-a2a9-1b4db7b5722e</id>
+      <masked>false</masked>
+      <name>Secret_Key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>ddb9944d-80ef-45d7-bdba-d090953ffe25</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(4, 1)</defaultValue>
+      <description></description>
+      <id>01225d17-3849-485a-a795-3988715f7480</id>
+      <masked>false</masked>
+      <name>Game_Code</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(3, 2)</defaultValue>
+      <description></description>
+      <id>0e76beb0-3c05-4de4-8929-f7995681a44f</id>
+      <masked>false</masked>
+      <name>Env_RGS</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
+      <description></description>
+      <id>2231a8a8-c08e-4080-a245-2167b736f74c</id>
+      <masked>false</masked>
+      <name>Env_krug_gw</name>
+   </variable>
+</TestCaseEntity>

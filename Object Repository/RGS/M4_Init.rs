@@ -65,7 +65,7 @@
       <name>gameId</name>
    </variables>
    <variables>
-      <defaultValue>findTestData('Environment').getValue(1, 2)</defaultValue>
+      <defaultValue>findTestData('Environment').getValue(3, 2)</defaultValue>
       <description></description>
       <id>d38557e0-c61e-44df-8198-78ece77a9e84</id>
       <masked>false</masked>

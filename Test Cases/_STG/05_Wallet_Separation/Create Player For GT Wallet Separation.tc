@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Create Player For GT Wallet Separation</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>67f372f1-93bb-4d98-b227-ed6d690117de</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>ed5e1a36-7cc3-44dc-8987-d5f5b0d25bcd</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>c70b5a0f-075b-44a4-9484-c8c50a03460c</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(3, 1)</defaultValue>
+      <description></description>
+      <id>68cd5681-6ff1-4465-9e4d-77fae7092232</id>
+      <masked>false</masked>
+      <name>Secret_Key</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
+      <description></description>
+      <id>8b10ab09-01d5-4578-be6c-c8c727bfc559</id>
+      <masked>false</masked>
+      <name>Env_krug_gw</name>
+   </variable>
+</TestCaseEntity>

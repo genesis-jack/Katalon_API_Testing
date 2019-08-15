@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>PTH-Detail-Free Spin</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5c997bd9-1947-43f4-a2f0-8df424c82fa5</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(2, 1)</defaultValue>
+      <description></description>
+      <id>7b162ee7-a8b3-46e6-9c3c-805dfaec89cd</id>
+      <masked>false</masked>
+      <name>Partner</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
+      <description></description>
+      <id>0831c17d-4d8a-4adf-80aa-75ebeba00629</id>
+      <masked>false</masked>
+      <name>Env_krug_gw</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>76ea0a8e-9020-4377-86f2-8178d8e7ffd0</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+</TestCaseEntity>

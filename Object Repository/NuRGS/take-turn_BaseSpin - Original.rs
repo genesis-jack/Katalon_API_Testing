@@ -9,7 +9,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n   \&quot;player_id\&quot;: \&quot;Katalon_Player_0001\&quot;,\n   \&quot;partner_code\&quot;: \&quot;BBIN\&quot;,\n   \&quot;game_code\&quot;: \&quot;${game_code}\&quot;,\n   \&quot;action\&quot;: \&quot;SPIN\&quot;,\n   \&quot;session_token\&quot;: \&quot;${rgs_session_token}\&quot;,\n   \&quot;state_tag\&quot;:\&quot;${state_tag}\&quot;,\n   \&quot;bet_denom_index\&quot;: 1\n}&quot;,
+  &quot;text&quot;: &quot;{\n   \&quot;player_id\&quot;: \&quot;XH_gt_gns_03\&quot;,\n   \&quot;partner_code\&quot;: \&quot;${partner_code}\&quot;,\n   \&quot;game_code\&quot;: \&quot;${game_code}\&quot;,\n   \&quot;action\&quot;: \&quot;SPIN\&quot;,\n   \&quot;session_token\&quot;: \&quot;${rgs_session_token}\&quot;,\n   \&quot;state_tag\&quot;:\&quot;${state_tag}\&quot;,\n   \&quot;bet_denom_index\&quot;: 1\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -30,35 +30,35 @@
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>GlobalVariable.player_id</defaultValue>
+      <defaultValue>'XH_gt_gns_03'</defaultValue>
       <description></description>
       <id>88345572-0624-4879-9ed5-fba5ed710c60</id>
       <masked>false</masked>
       <name>player_id</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.partner_code</defaultValue>
+      <defaultValue>'GT'</defaultValue>
       <description></description>
       <id>5d4093f1-b3be-4438-9382-dae44691ce15</id>
       <masked>false</masked>
       <name>partner_code</name>
    </variables>
    <variables>
-      <defaultValue>'9b6a3a06-e905-45a7-8da8-6ec63854e098'</defaultValue>
+      <defaultValue>'06c0c110-5621-46c8-8a0e-399e38593d34'</defaultValue>
       <description></description>
       <id>edf13d5c-239b-4355-803f-4b21a4176c2e</id>
       <masked>false</masked>
       <name>rgs_session_token</name>
    </variables>
    <variables>
-      <defaultValue>'16292711'</defaultValue>
+      <defaultValue>'B0E30C35'</defaultValue>
       <description></description>
       <id>81775165-c804-481b-873f-5ed32c2334d0</id>
       <masked>false</masked>
       <name>state_tag</name>
    </variables>
    <variables>
-      <defaultValue>findTestData('NG Game Release Acceptance Test').getValue(4, 1)</defaultValue>
+      <defaultValue>'NG-0063'</defaultValue>
       <description></description>
       <id>4028fe26-d61e-4908-8e90-5e3cbd963da0</id>
       <masked>false</masked>

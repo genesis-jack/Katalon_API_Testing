@@ -58,7 +58,7 @@
       <name>game_code</name>
    </variables>
    <variables>
-      <defaultValue>'3655oule'</defaultValue>
+      <defaultValue>findTestData('Environment').getValue(3, 2)</defaultValue>
       <description></description>
       <id>6a64529c-90ff-4aef-8717-d5aff48f48c2</id>
       <masked>false</masked>

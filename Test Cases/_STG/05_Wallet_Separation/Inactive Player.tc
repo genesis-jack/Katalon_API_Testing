@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Inactive Player</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a511af60-6013-4c48-84f4-319301f9c654</testCaseGuid>
+   <variable>
+      <defaultValue>findTestData('Environment').getValue(5, 2)</defaultValue>
+      <description></description>
+      <id>d7f627b4-75a1-43be-88d4-9a70c14dadb6</id>
+      <masked>false</masked>
+      <name>Env_krug_gw</name>
+   </variable>
+   <variable>
+      <defaultValue>findTestData('GT_Wallet_Separation-GT_Genesis').getValue(5, 1)</defaultValue>
+      <description></description>
+      <id>4217b5a6-cf9a-4f1b-9026-d2a9cc898957</id>
+      <masked>false</masked>
+      <name>Player_ID</name>
+   </variable>
+</TestCaseEntity>
